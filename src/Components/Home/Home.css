@@ -1,15 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .hero-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Ocupar 100% da altura da tela */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Garante que a imagem de fundo não ultrapasse os limites */
+  position: absolute; /* Permite posicionar livremente na tela */
+  top: 40%; /* Distância do topo da tela */
+  left: 23%; /* Distância da esquerda da tela */
+  transform: translate(-50%, -50%); /* Centraliza o contêiner, ajustando o ponto de origem */
+  width: 20%; /* Ajuste a largura conforme necessário */
+  height: 50vh; /* Ajuste a altura conforme necessário */
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
+
+
+.hero-container h1 {
+  text-align: left; /* Alinhar o texto à esquerda */
+  color: #3C0E0E; /* Exemplo de cor */
+  margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
+  font-size: 24px;
+}
+
+.hero-container h2 {
+  text-align: left; /* Alinhar o texto à esquerda */
+  color: #3C0E0E; /* Exemplo de cor */
+  margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
+  font-size: 80px;
+  line-height: 1;
+}
+
+.hero-container h3 {
+  text-align: left; /* Alinhar o texto à esquerda */
+  color: #3C0E0E; /* Exemplo de cor */
+  margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
+  font-size: 16px;
+  font-weight: 400; /* Define o peso como normal */
+}
+
 
 .hero-image {
   position: absolute;
@@ -22,30 +47,6 @@
   filter: brightness(0.5); /* Escurece a imagem em 50% */
 }
 
-.textoSobreposto {
-  font-size: 3vw;
-  color: white;
-  padding: 3vw;
-  z-index: 1; /* Garantir que o texto fique acima da imagem */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  text-align: center; 
-  line-height: 0.9; 
-  font-family: 'Bungee', cursive; /* Define a fonte Bungee */
-  font-weight: normal; /* Garante que a fonte não será em negrito */
-  letter-spacing: 0.3vw;
-}
-
-.textoSobrepostoDescr {
-  font-size: 1.5vw;
-  color: white;
-  padding: 21px;
-  z-index: 1; /* Garantir que o texto fique acima da imagem */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  text-align: center; 
-  line-height: 1.2; 
-  font-family: 'Bungee', cursive; /* Define a fonte Bungee */
-  font-weight: normal; /* Garante que a fonte não será em negrito */
-}
 
 @keyframes glow {
   0% {
@@ -70,20 +71,6 @@
   }
 }
 
-.textoSobreposto,
-.textoSobrepostoDescr {
-  opacity: 0; /* Começa invisível */
-  animation: slideInFromLeft 1s ease-out forwards;
-}
-
-.textoSobrepostoPrinciapal {
-  text-align: center;
-  animation-delay: 0.2s; /* Atraso para criar o efeito de sincronização */
-}
-
-.textoSobrepostoDescr {
-  animation-delay: 0.4s; /* Atraso adicional para que a descrição apareça depois */
-}
 
 
 .homeLogoWhats { 
@@ -93,25 +80,10 @@
   vertical-align: middle; 
 }
 
-
-.textoSobrepostoPrinciapal {
-  text-align: center; /* Alinhamento do texto */
-}
-
 /* Media Queries para responsividade */
 @media (max-width: 1200px) {
   .homeLogoWhats { 
     width: 6vw; 
-  }
-
-  .textoSobreposto {
-    font-size: 4vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 4vw; /* Ajusta o padding para telas menores */
-  }
-
-  .textoSobrepostoDescr {
-    font-size: 2.2vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 15px; /* Ajusta o padding para telas menores */
   }
 
 }
@@ -120,40 +92,13 @@
   .homeLogoWhats { 
     width: 6vw; 
   }
-  
-  .textoSobreposto {
-    font-size: 5vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 5vw; /* Ajusta o padding para telas menores */
-  }
 
-  .textoSobrepostoDescr {
-    font-size: 3vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 12px; /* Ajusta o padding para telas menores */
-  }
 
-  .hero-container {
-    height: 80vh; 
-  }
 }
 
 @media (max-width: 480px) {
   .homeLogoWhats { 
     width: 6vw; 
   }
-  
-  .textoSobreposto {
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      text-align: center; 
-      letter-spacing: 1vw;
-      font-size: 6vw; /* Ajusta o tamanho da fonte para telas menores */
-  }
 
-  .textoSobrepostoDescr {
-    font-size: 3.5vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding-bottom:  40px; /* Ajusta o padding para telas menores */
-  }
-
-  .hero-container {
-    height: 80vh; 
-  }
 }
