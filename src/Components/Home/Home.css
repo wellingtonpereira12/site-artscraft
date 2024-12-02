@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupar 100% da altura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Garante que a imagem de fundo não ultrapasse os limites */
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Enviar a imagem para o fundo */
+  filter: brightness(0.5); /* Escurece a imagem em 50% */
+}
+
+.textoSobreposto {
+  font-size: 3vw;
+  color: white;
+  padding: 3vw;
+  z-index: 1; /* Garantir que o texto fique acima da imagem */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center; 
+  line-height: 0.9; 
+  font-family: 'Bungee', cursive; /* Define a fonte Bungee */
+  font-weight: normal; /* Garante que a fonte não será em negrito */
+  letter-spacing: 0.3vw;
+}
+
+.textoSobrepostoDescr {
+  font-size: 1.5vw;
+  color: white;
+  padding: 21px;
+  z-index: 1; /* Garantir que o texto fique acima da imagem */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center; 
+  line-height: 1.2; 
+  font-family: 'Bungee', cursive; /* Define a fonte Bungee */
+  font-weight: normal; /* Garante que a fonte não será em negrito */
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px chartreuse, 0 0 4px chartreuse, 0 0 5px chartreuse;
+  }
+  50% {
+    box-shadow: 0 0 2px #ffffff, 0 0 4px #ffffff, 0 0 6px chartreuse, 0 0 8px chartreuse, 0 0 10px chartreuse;
+  }
+  100% {
+    box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px chartreuse, 0 0 4px chartreuse, 0 0 5px chartreuse;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.textoSobreposto,
+.textoSobrepostoDescr {
+  opacity: 0; /* Começa invisível */
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.textoSobrepostoPrinciapal {
+  text-align: center;
+  animation-delay: 0.2s; /* Atraso para criar o efeito de sincronização */
+}
+
+.textoSobrepostoDescr {
+  animation-delay: 0.4s; /* Atraso adicional para que a descrição apareça depois */
+}
+
+.botao-especialista {
+  background-color: aliceblue;
+  color: black;
+  border: none;
+  border-radius: 1vw;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-family: 'Bungee', cursive;
+  animation: glow 2s infinite; /* Aplica a animação */
+}
+
+.botao-especialista:hover {
+  background-color: #ffffff;
+}
+
+.homeLogoWhats { 
+  width: 3vw; 
+  height: auto; 
+  margin-right: 0.5vw; 
+  vertical-align: middle; 
+}
+
+
+.textoSobrepostoPrinciapal {
+  text-align: center; /* Alinhamento do texto */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1200px) {
+  .homeLogoWhats { 
+    width: 6vw; 
+  }
+
+  .textoSobreposto {
+    font-size: 4vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding: 4vw; /* Ajusta o padding para telas menores */
+  }
+
+  .textoSobrepostoDescr {
+    font-size: 2.2vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding: 15px; /* Ajusta o padding para telas menores */
+  }
+
+  .botao-especialista {
+    font-size: 4vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding: 2vw 2vw; /* Ajusta o padding para telas menores */
+  }
+}
+
+@media (max-width: 768px) {
+  .homeLogoWhats { 
+    width: 6vw; 
+  }
+  
+  .textoSobreposto {
+    font-size: 5vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding: 5vw; /* Ajusta o padding para telas menores */
+  }
+
+  .textoSobrepostoDescr {
+    font-size: 3vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding: 12px; /* Ajusta o padding para telas menores */
+  }
+
+  .botao-especialista {
+    font-size: 5vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding: 3vw 4vw; /* Ajusta o padding para telas menores */
+  }
+
+  .hero-container {
+    height: 80vh; 
+  }
+}
+
+@media (max-width: 480px) {
+  .homeLogoWhats { 
+    width: 6vw; 
+  }
+  
+  .textoSobreposto {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-align: center; 
+      letter-spacing: 1vw;
+      font-size: 6vw; /* Ajusta o tamanho da fonte para telas menores */
+  }
+
+  .textoSobrepostoDescr {
+    font-size: 3.5vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding-bottom:  40px; /* Ajusta o padding para telas menores */
+  }
+
+  .botao-especialista {
+    font-size: 5vw; /* Ajusta o tamanho da fonte para telas menores */
+    padding: 3vw 4vw; /* Ajusta o padding para telas menores */
+  }
+
+  .hero-container {
+    height: 80vh; 
+  }
+}
