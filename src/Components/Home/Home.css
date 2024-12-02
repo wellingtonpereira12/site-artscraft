@@ -85,27 +85,6 @@
   animation-delay: 0.4s; /* Atraso adicional para que a descrição apareça depois */
 }
 
-.botao-especialista {
-  background-color: aliceblue;
-  color: black;
-  border: none;
-  border-radius: 1vw;
-  padding: 1vw 2vw;
-  font-size: 2vw;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  font-family: 'Bungee', cursive;
-  animation: glow 2s infinite; /* Aplica a animação */
-}
-
-.botao-especialista:hover {
-  background-color: #ffffff;
-}
 
 .homeLogoWhats { 
   width: 3vw; 
@@ -135,10 +114,6 @@
     padding: 15px; /* Ajusta o padding para telas menores */
   }
 
-  .botao-especialista {
-    font-size: 4vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 2vw 2vw; /* Ajusta o padding para telas menores */
-  }
 }
 
 @media (max-width: 768px) {
@@ -154,11 +129,6 @@
   .textoSobrepostoDescr {
     font-size: 3vw; /* Ajusta o tamanho da fonte para telas menores */
     padding: 12px; /* Ajusta o padding para telas menores */
-  }
-
-  .botao-especialista {
-    font-size: 5vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 3vw 4vw; /* Ajusta o padding para telas menores */
   }
 
   .hero-container {
@@ -181,11 +151,6 @@
   .textoSobrepostoDescr {
     font-size: 3.5vw; /* Ajusta o tamanho da fonte para telas menores */
     padding-bottom:  40px; /* Ajusta o padding para telas menores */
-  }
-
-  .botao-especialista {
-    font-size: 5vw; /* Ajusta o tamanho da fonte para telas menores */
-    padding: 3vw 4vw; /* Ajusta o padding para telas menores */
   }
 
   .hero-container {
