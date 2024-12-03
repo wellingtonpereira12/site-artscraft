@@ -49,7 +49,7 @@ const Navbar = () => {
                 <ul className={active}>
                     <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#inicio">Início</a></li>
                     <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#servico">Produtos</a></li>
-                    <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#sobre-nos">Sobre Nós</a></li>
+                    <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#sobre-nos">Sobre</a></li>
                     <button onClick={handleClickWhatsapp} className={`btnNav ${scrolled ? 'scrolled' : ''}`}> 
                         <FaWhatsapp className='FaWhatsapp'/>
                         {toggleIcon !== 'nav_toggler' ? (

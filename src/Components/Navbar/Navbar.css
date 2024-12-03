@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
 
 *,*::before{
     margin: 0;
@@ -20,12 +18,16 @@ li{
 
 a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #3C0E0E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Define o peso como normal */
 }
 
 a.scrolled{
     text-decoration: none;
-    color: rgb(68, 68, 68);
+    color: #3C0E0E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Define o peso como normal */
 }
 
 .FaWhatsapp {
@@ -40,11 +42,8 @@ a.scrolled{
     height: 8vh;
     background: rgba(0, 0, 73, 0);
     flex-direction: row; /* Alinha itens horizontalmente */
-    padding: 120px 400px; /* Ajuste o padding conforme necessário */
+    padding: 90px 300px; /* Ajuste o padding conforme necessário */
     position: fixed; /* Fixa o menu no topo */
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0); /* Adiciona fundo semi-transparente */
     transition: background-color 0.3s ease, padding 0.3s ease;
@@ -81,8 +80,6 @@ a.scrolled{
 .nav_toggler div{
     width: 2.5rem;
     height: 0.2rem;
-    margin: 0.4rem;
-    background: darkgray;
 }
 .nav_toggler{
     cursor: pointer;
@@ -96,7 +93,7 @@ a.scrolled{
 }    
 
 .logo {
-    width: 5vw; /* Defina a largura */
+    width: 10vw; /* Defina a largura */
     height: auto; /* Mantém a proporção da imagem */
 }
 
