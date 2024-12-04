@@ -9,7 +9,7 @@ const Navbar = () => {
     const [active, setActive] = useState("nav_menu");
     const [toggleIcon, setToggleIcon] = useState("nav_toggler");
     const [scrolled, setScrolled] = useState(false);
-    const phoneNumber = '47984862476'; // Coloque o número de telefone com DDD
+    const phoneNumber = '47984862476'; 
     const message = 'Olá,%20gostaria%20de%20de%20criar%20uma%20prévia%20grátis%20da%20minha%20marca.%20Podemos%20conversar%20sobre%20os%20detalhes%20e%20etapas%20do%20projeto?';
   
     const handleClickInsta = () => {

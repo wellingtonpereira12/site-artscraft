@@ -1,0 +1,116 @@
+/* Estilo geral da seção de velas */
+.velas-section {
+    background-color: #fdf6f0; /* Fundo bege */
+    padding: 2rem;
+}
+
+/* Conteúdo principal */
+.velas-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Responsivo para telas menores */
+    gap: 2rem;
+}
+
+/* Texto principal */
+.texto {
+    max-width: 50%;
+}
+
+.texto .preco {
+    background-color: #fee6e6;
+    color: #3c0e0e;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.texto h1 {
+    font-size: 2.5rem;
+    color: #3c0e0e;
+    margin: 0;
+}
+
+.texto h2 {
+    font-size: 1.5rem;
+    color: #6e4d4d;
+    margin: 1rem 0;
+}
+
+.texto .descricao {
+    font-size: 1rem;
+    color: #6e4d4d;
+    margin-bottom: 1.5rem;
+}
+
+.texto .link-contato {
+    color: #3c0e0e;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Imagem principal */
+.imagem-vela img {
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Banner de encomenda */
+.banner-encomenda {
+    background: linear-gradient(145deg, #f8d5d5, #d7b3b3); /* Gradiente */
+    border-radius: 20px;
+    margin-top: 2rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Imagem no banner */
+.imagem-banner {
+    max-width: 200px;
+    border-radius: 15px;
+}
+
+/* Texto no banner */
+.texto-banner h2 {
+    font-size: 1.8rem;
+    color: #3c0e0e;
+    margin-bottom: 0.5rem;
+}
+
+.texto-banner p {
+    font-size: 1rem;
+    color: #6e4d4d;
+    margin-bottom: 1rem;
+}
+
+.botao-banner {
+    display: inline-block;
+    background-color: #3c0e0e;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.botao-banner:hover {
+    background-color: #5a1a1a;
+}

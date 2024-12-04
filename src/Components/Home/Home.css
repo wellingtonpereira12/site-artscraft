@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 .hero-container {
-  position: absolute; /* Permite posicionar livremente na tela */
-  top: 40%; /* Distância do topo da tela */
-  left: 23%; /* Distância da esquerda da tela */
-  transform: translate(-50%, -50%); /* Centraliza o contêiner, ajustando o ponto de origem */
+  transform: translate(74%, 30%); /* Centraliza o contêiner, ajustando o ponto de origem */
   width: 20%; /* Ajuste a largura conforme necessário */
   height: 50vh; /* Ajuste a altura conforme necessário */
   padding: 2rem;
@@ -39,7 +36,7 @@
   position: absolute; /* Permite posicionar livremente na tela */
   top: 30%; /* Distância do topo da tela */
   left: 55%; /* Distância da esquerda da tela */
-  transform: translate(-50%, -50%); /* Centraliza o contêiner, ajustando o ponto de origem */
+  transform: translate(-40%, -50%); /* Centraliza o contêiner, ajustando o ponto de origem */
   padding: 2rem;
   font-family: 'Poppins', sans-serif;
   background-size: 50%; /* Reduz o tamanho da imagem para 50% do tamanho original */

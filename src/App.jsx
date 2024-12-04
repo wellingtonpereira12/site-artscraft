@@ -1,5 +1,8 @@
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
+import Produtos from './Components/Produtos/Produtos';
+import Velas from './Components/Velas/Velas';
+import SobreNos from './Components/SobreNos/SobreNos';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import './App.css'
 
@@ -14,6 +17,9 @@ function App() {
         </Helmet>
         <Navbar />
         <Home />
+        <Produtos /> 
+        <Velas /> 
+        <SobreNos /> 
       </div>
     </HelmetProvider>  
   )

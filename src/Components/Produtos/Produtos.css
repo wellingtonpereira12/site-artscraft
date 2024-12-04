@@ -1,0 +1,103 @@
+.produtos-container {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Alinha horizontalmente ao centro */
+    justify-content: center; /* Alinha verticalmente ao centro */
+    text-align: center; /* Centraliza o texto */
+}
+
+.produtos-container h1 {
+    text-align: left; /* Alinhar o texto à esquerda */
+    color: #3C0E0E; /* Exemplo de cor */
+    margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
+    font-size: 40px;
+  }
+  
+.produtos-container h2 {
+    text-align: left; /* Alinhar o texto à esquerda */
+    color: #3C0E0E; /* Exemplo de cor */
+    margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400; /* Define o peso como normal */
+}
+  
+/* Estilizando a seção geral */
+#produtos {
+    background-color: #fdf6f0; /* Fundo bege */
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Grid dos cartões */
+.produtos-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+
+/* Estilo dos cartões */
+.produto-card {
+    background: linear-gradient(145deg, #ffffff, #f1e7e0); /* Fundo com gradiente leve */
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    width: 300px; /* Largura fixa */
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: scale(1.05); /* Efeito de zoom */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem dos produtos */
+.produto-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Preço */
+.produto-card .preco {
+    color: #3c0e0e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* Título do produto */
+.produto-card h3 {
+    font-size: 1.5rem;
+    color: #3c0e0e;
+    margin: 0.5rem 0;
+}
+
+/* Descrição */
+.produto-card .descricao {
+    font-size: 1rem;
+    color: #6e4d4d;
+    margin: 1rem 0;
+}
+
+/* Botão */
+.produto-card button {
+    background-color: #3c0e0e;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.produto-card button:hover {
+    background-color: #5a1a1a; /* Tom mais escuro no hover */
+}

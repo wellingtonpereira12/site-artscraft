@@ -1,0 +1,106 @@
+/* Estilo geral da seção Sobre Nós */
+.sobre-nos-section {
+    background-color: #fdf6f0; /* Fundo bege */
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Conteúdo principal */
+.sobre-nos-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+/* Título principal */
+.texto-principal h1 {
+    font-size: 2rem;
+    color: #3c0e0e;
+    margin-bottom: 1rem;
+}
+
+.texto-principal h2 {
+    font-size: 1.5rem;
+    color: #6e4d4d;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Texto descritivo */
+.descricao p {
+    color: #6e4d4d;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+.descricao p strong {
+    color: #3c0e0e;
+    font-weight: bold;
+}
+
+/* Banner da seção */
+.banner-sobre-nos {
+    background: linear-gradient(145deg, #f8d5d5, #d7b3b3); /* Gradiente */
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Conteúdo do banner */
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Texto no banner */
+.texto-banner h2 {
+    font-size: 1.8rem;
+    color: #3c0e0e;
+    margin-bottom: 0.5rem;
+}
+
+.texto-banner p {
+    font-size: 1rem;
+    color: #6e4d4d;
+    margin-bottom: 1rem;
+}
+
+.texto-banner .link-contato {
+    display: inline-block;
+    color: #3c0e0e;
+    text-decoration: underline;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Imagem e endereço no banner */
+.imagem-endereco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.imagem-endereco .imagem-banner {
+    max-width: 200px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.imagem-endereco .endereco h3 {
+    font-size: 1.2rem;
+    color: #3c0e0e;
+    margin-bottom: 0.5rem;
+}
+
+.imagem-endereco .endereco p {
+    font-size: 1rem;
+    color: #6e4d4d;
+}
