@@ -51,7 +51,7 @@ a.scrolled{
 
 .nav.scrolled {
     background-color: rgb(255, 255, 255); /* Escurece o fundo ao rolar */
-    padding: 35px 20vw; /* Ajuste o padding conforme necessário */
+    padding: 35px 35vw; /* Ajuste o padding conforme necessário */
     
 }
 

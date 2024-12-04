@@ -1,4 +1,8 @@
 import './Produtos.css';
+import descansCopos from '../../assets/kit-descanso-copos.png';
+import portajoia from '../../assets/porta-joia.png';
+import portaFotos from '../../assets/porta-fotos.png';
+
 
 function Produtos() {
     return (
@@ -10,7 +14,7 @@ function Produtos() {
             <div className="produtos-grid">
                 {/* Cartão 1 */}
                 <div className="produto-card">
-                    <img src="porta-fotos.jpg" alt="Porta-Fotos" />
+                    <img src={portaFotos} alt="Porta-Fotos" />
                     <p className="preco">R$ 5,99</p>
                     <h3>Porta-Fotos</h3>
                     <p className="descricao">Porta fotos dos momentos felizes da sua vida</p>
@@ -19,7 +23,7 @@ function Produtos() {
                 
                 {/* Cartão 2 */}
                 <div className="produto-card">
-                    <img src="porta-joia.jpg" alt="Porta-Joia" />
+                    <img src={portajoia} alt="Porta-Joia" />
                     <p className="preco">R$ 19,90</p>
                     <h3>Porta-Joia</h3>
                     <p className="descricao">Porta-joias "Smug": elegância e proteção para suas joias.</p>
@@ -28,7 +32,7 @@ function Produtos() {
                 
                 {/* Cartão 3 */}
                 <div className="produto-card">
-                    <img src="kit-descanso-copos.jpg" alt="Kit Descanso de Copos" />
+                    <img src= {descansCopos} alt="Kit Descanso de Copos" />
                     <p className="preco">R$ 19,90</p>
                     <h3>Kit Descanso de Copos</h3>
                     <p className="descricao">Kit descanso de copos personalizado: estilo único com seu nome.</p>
