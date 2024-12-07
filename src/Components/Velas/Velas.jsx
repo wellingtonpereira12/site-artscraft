@@ -1,4 +1,6 @@
 import './Velas.css';
+import velaspresente from '../../assets/Vela e presente.png';
+import velas from '../../assets/Vela.png';
 
 function Velas() {
     return (
@@ -17,14 +19,14 @@ function Velas() {
 
                 {/* Imagem principal */}
                 <div className="imagem-vela">
-                    <img src="vela-arvore.jpg" alt="Vela em formato de árvore" />
+                    <img src={velas} alt="Vela em formato de árvore" />
                 </div>
             </div>
 
             {/* Banner inferior */}
             <div className="banner-encomenda">
                 <div className="banner-content">
-                    <img src="presentes.jpg" alt="Presentes com vela" className="imagem-banner" />
+                    <img src={velaspresente} alt="Presentes com vela" className="imagem-banner" />
                     <div className="texto-banner">
                         <h2>Faça sua encomenda</h2>
                         <p>Faça sua encomenda e personalize com seu nome!</p>
