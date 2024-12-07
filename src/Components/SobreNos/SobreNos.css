@@ -1,8 +1,9 @@
 /* Estilo geral da seção Sobre Nós */
 .sobre-nos-section {
-    background-color: #fdf6f0; /* Fundo bege */
-    padding: 2rem;
     font-family: 'Poppins', sans-serif;
+    padding-left: 25rem;
+    padding-right: 25rem;
+    padding-top: 2rem;
 }
 
 /* Conteúdo principal */

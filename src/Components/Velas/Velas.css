@@ -1,7 +1,8 @@
 /* Estilo geral da seção de velas */
 .velas-section {
-    background-color: #fdf6f0; /* Fundo bege */
-    padding: 2rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
+    padding-top: 2rem;
 }
 
 /* Conteúdo principal */
@@ -25,41 +26,40 @@
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
 .texto h1 {
-    font-size: 2.5rem;
+    font-size: 6rem;
     color: #3c0e0e;
     margin: 0;
 }
 
 .texto h2 {
-    font-size: 1.5rem;
-    color: #6e4d4d;
-    margin: 1rem 0;
+    font-size: 3rem;
+    color: #3c0e0e;
+    font-weight: 400;
 }
 
 .texto .descricao {
-    font-size: 1rem;
-    color: #6e4d4d;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: #3c0e0e;
+    margin-bottom: 1rem;
+    padding-right: 20rem;
 }
 
 .texto .link-contato {
     color: #3c0e0e;
     text-decoration: underline;
-    font-weight: bold;
     font-size: 1rem;
 }
 
 /* Imagem principal */
 .imagem-vela img {
-    max-width: 300px;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    
 }
 
 /* Banner de encomenda */
@@ -84,7 +84,7 @@
 
 /* Imagem no banner */
 .imagem-banner {
-    max-width: 200px;
+    max-width: 600px;
     border-radius: 15px;
 }
 
