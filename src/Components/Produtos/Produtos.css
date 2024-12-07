@@ -1,12 +1,12 @@
 .produtos-container {
     padding-top: 6rem;
     padding-bottom: 4rem;
-    font-family: 'Poppins', sans-serif;
     display: flex; /* Ativa o Flexbox */
     flex-direction: column; /* Empilha os elementos verticalmente */
     align-items: center; /* Alinha horizontalmente ao centro */
     justify-content: center; /* Alinha verticalmente ao centro */
     text-align: center; /* Centraliza o texto */
+    font-family: 'Poppins', sans-serif;
 }
 
 .produtos-container h1 {
@@ -30,6 +30,7 @@
     background-color: #fdf6f0; /* Fundo bege */
     padding: 2rem;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Grid dos cartões */
@@ -39,6 +40,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap; /* Permite quebrar em telas menores */
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Estilo dos cartões */

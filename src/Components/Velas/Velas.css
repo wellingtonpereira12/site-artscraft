@@ -16,6 +16,7 @@
 /* Texto principal */
 .texto {
     max-width: 50%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .texto .preco {
@@ -92,12 +93,14 @@
     font-size: 1.8rem;
     color: #3c0e0e;
     margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .texto-banner p {
     font-size: 1rem;
     color: #6e4d4d;
     margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .botao-banner {

@@ -1,4 +1,5 @@
 import './SobreNos.css';
+import velasepresentejuntos from '../../assets/velasepresentejuntos.png';
 
 function SobreNos() {
     return (
@@ -39,7 +40,7 @@ function SobreNos() {
 
                     {/* Imagem e endereço */}
                     <div className="imagem-endereco">
-                        <img src="vela-arvore.jpg" alt="Vela artesanal" className="imagem-banner" />
+                        <img src={velasepresentejuntos} alt="Vela artesanal" className="imagem-banner" />
                         <div className="endereco">
                             <h3>Onde estamos</h3>
                             <p>Você pode nos encontrar no endereço:</p>

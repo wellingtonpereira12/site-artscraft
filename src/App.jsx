@@ -3,6 +3,7 @@ import Home from './Components/Home/Home';
 import Produtos from './Components/Produtos/Produtos';
 import Velas from './Components/Velas/Velas';
 import SobreNos from './Components/SobreNos/SobreNos';
+import End from './Components/End/End';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import './App.css'
 
@@ -20,6 +21,7 @@ function App() {
         <Produtos /> 
         <Velas /> 
         <SobreNos /> 
+        <End /> 
       </div>
     </HelmetProvider>  
   )

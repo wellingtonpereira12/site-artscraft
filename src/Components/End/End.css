@@ -1,0 +1,209 @@
+.endSectionEnd {
+    background-color: #1F2428;
+    align-items: center;
+    justify-content: center;    
+}
+
+.endSectionEndParticao {
+    display: flex; 
+    align-items: center;
+}
+
+.endSectionEndParticao h1 {
+    margin: 5% 15% 5% 10%;
+    color: #d3d3d3;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 2vw;
+    white-space: nowrap;
+}
+
+.endSectionEndParticao button {
+    background-color: #FF914D;
+    border: none; /* Remove a borda padrão */
+    width: 10vw; 
+    height: 10vw;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Cursor em forma de mão */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+.endSectionEndParticao button:hover {
+    background-color: #cc3b3b; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Sombra ao redor */
+}
+
+.endflecha-esquerda {
+    width: 0;
+    height: 0;
+    border-top: 2vw solid transparent;
+    border-bottom: 2vw solid transparent;
+    border-left: 4vw solid #ffffff;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.endlogo {
+    width: 6vw; /* Defina a largura */
+    height: auto; /* Mantém a proporção da imagem */
+    
+}
+
+.endlinha-branca {
+    width: 78%; /* Ocupa toda a largura da tela */
+    height: 2px; /* Altura da linha */
+    background-color: #B4B4B4; /* Cor da linha */
+    position: relative; /* Para ajustes posicionais se necessário */
+    margin: 0% 0% 0% 10%;
+}
+
+.endDivLogo {
+    margin: 10% 0% 0% 0%;
+    display: flex;
+    align-items: center;
+}
+
+.endDivLogo h1{
+    margin: 0% 0% 0% 1%;
+    color: #D4D4D4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 2vw;
+}
+
+.endDivLogo1 {
+    margin: 30% 0% 0% 0%;
+    display: flex;
+    align-items: center;
+}
+
+.endDivLogo1 h1{
+    margin: 15% 0% 0% 1%;
+    color: #D4D4D4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 2vw;
+}
+
+.endAteLogo{
+    margin: 20% 0% 0% 0%;
+    color: #D4D4D4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 2vw;
+}
+
+.endDado{
+    margin: 20% 0% 0% 0%;
+    color: #D4D4D4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 1.5vw;
+}
+
+.endDado div{
+    margin: 1% 0% 0% 0%;
+}
+
+.endDado1 {
+    margin: 5% 0% 0% 0%;
+    color: #D4D4D4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 1.5vw;
+}
+
+.endDado1 a {
+    display: list-item;
+    margin: 6% 0% 0% 15%;
+    cursor: pointer; /* Cursor em forma de mão */
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: inherit; /* Herda a cor do pai */
+}
+
+.endDado1 a:hover {
+    color: #cc3b3b; /* Cor do texto ao passar o mouse */
+    transition: color 0.3s ease; /* Transição para a cor do texto */
+}
+
+.endContainer {
+    margin: 0% 0% 0% 10%; 
+}
+
+.endContainer1 {
+    margin: 0% 0% 0% 10%; 
+}
+
+.endContainerPrincipal {
+    display: flex; /* Usa Flexbox para alinhamento */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha quando necessário */
+    gap: 1px; /* Espaçamento entre os itens */
+}
+
+.endDireitos{
+    margin: 4% 0% 0% 29%;
+    color: #b1b1b1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 1.5vw;
+}
+
+@media screen and (max-width: 550px) {
+
+    
+    .endSectionEndParticao h1 {
+        font-size: 3vw;
+    }
+
+    
+    .endlogo {
+        width: 20vw; /* Defina a largura */
+    }
+    
+    
+    .endDivLogo h1{
+        margin: 0% 0% 0% 5%;
+        font-size: 8vw;
+    }
+    
+    .endDivLogo1 {
+        margin: 20% 0% 0% 0%;
+    }
+    
+    .endDivLogo1 h1{
+        font-size: 8vw;
+    }
+    
+    .endAteLogo{
+        margin: 10% 0% 0% 0%;
+        font-size: 4vw;
+    }
+    
+    .endDado{
+        margin: 5% 0% 0% 0%;
+        font-size: 4vw;
+    }
+    
+    .endDado div{
+        margin: 2% 0% 0% 0%;
+    }
+    
+    .endDado1 {
+        margin: 5% 0% 0% 0%;
+        font-size: 4vw;
+    }
+        
+    .endContainerPrincipal {
+        display: flex; /* Usa Flexbox para alinhamento */
+        flex-wrap: wrap; /* Permite que os itens quebrem linha quando necessário */
+        gap: 5px; /* Espaçamento entre os itens */
+    }
+    
+    .endDireitos{
+        margin: 6% 0% 0% 15%;
+        font-size: 3vw;
+    }   
+}
