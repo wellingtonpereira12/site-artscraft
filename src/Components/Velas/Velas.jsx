@@ -1,5 +1,5 @@
 import './Velas.css';
-import velas from '../../assets/Vela.png';
+import velas from '../../assets/Vela2.png';
 
 function Velas() {
     return (
