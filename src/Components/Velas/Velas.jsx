@@ -2,6 +2,11 @@ import './Velas.css';
 import velasImag from '../../assets/vela3.png';
 
 function Velas() {
+    const phoneNumber = '47991263519'; 
+
+    const handleClickWhatsapp = (ms) => {
+        window.open(`https://wa.me/${phoneNumber}?text=${ms}`, '_blank');  
+    };
     return (
         <section id="velas" className="velas-section">
             <div className="velas-content">
@@ -13,7 +18,7 @@ function Velas() {
                     <p className="descricao">
                         Velas aromatizadas com diversas fragrâncias para criar o ambiente perfeito.
                     </p>
-                    <a href="#contato" className="link-contato">Entre em contato</a>
+                    <a href="#contato" className="link-contato" onClick={() => handleClickWhatsapp('Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?')}>Entre em contato</a>
                 </div>
 
                 {/* Imagem principal */}
@@ -28,7 +33,7 @@ function Velas() {
                 <div className='texto-facaIcomendas'>Faça sua encomenda</div>
                 <div className="texto-bannerVelas">      
                     <p>Faça sua encomenda e personalize com seu nome!</p>
-                    <a href="#contato" className="botao-banner">Entre em contato</a>              
+                    <a href="#contato" className="botao-banner" onClick={() => handleClickWhatsapp('Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?')}>Entre em contato</a>              
                 </div>           
             </div>
         </section>

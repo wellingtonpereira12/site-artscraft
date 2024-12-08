@@ -51,10 +51,11 @@
 }
 
 .texto .link-contato {
+    position: relative; /* Posiciona o botão acima da imagem */
+    z-index: 1; /* Garante que o botão fique acima da imagem */
     color: #3c0e0e;
     text-decoration: underline;
-    font-size: 1rem;
-    
+    font-size: 1rem;   
 }
 
 /* Imagem principal */
@@ -115,6 +116,7 @@
 }
 
 .botao-banner {
+    position: relative; /* Posiciona o botão acima da imagem */
     display: inline-block;
     background-color: #ffffff;
     color: #000000;
