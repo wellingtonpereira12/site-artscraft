@@ -23,7 +23,6 @@
     color: #3c0e0e;
     margin-bottom: 1rem;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .texto-principal h2 {
@@ -46,17 +45,32 @@
     font-weight: bold;
 }
 
-/* Banner da seção */
-.banner-sobre-nos {
-    background: linear-gradient(145deg, #f8d5d5, #d7b3b3); /* Gradiente */
-    border-radius: 20px;
-    padding: 2rem;
+.banner-sobre-nos-controle{
     display: flex;
+    margin-bottom: 5rem;
+}
+
+/* Banner da seção */
+.banner-sobre-nos1 {
+    background: linear-gradient(180deg, #541511, #F3C7C4); /* Gradiente de cima para baixo */
+    border-radius: 20px 0px 0px 20px;
+    padding: 2rem;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
 }
+
+.banner-sobre-nos2 {
+    background: linear-gradient(200deg, #541511, #F3C7C4); /* Gradiente de cima para baixo */
+    border-radius: 0px 20px 20px 0px;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
 
 /* Conteúdo do banner */
 .banner-contentSobre {
@@ -64,27 +78,38 @@
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
+    padding-right: 40rem;
+    padding-left: 1rem;
 }
 
 /* Texto no banner */
 .texto-bannerSobre h2 {
-    font-size: 1.8rem;
-    color: #3c0e0e;
-    margin-bottom: 0.5rem;
+    font-size: 6rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    line-height: 1; /* Ajusta o espaçamento entre as linhas */
 }
 
 .texto-bannerSobre p {
-    font-size: 1rem;
-    color: #6e4d4d;
+    font-size: 2rem;
+    color: #ffffff;
     margin-bottom: 1rem;
 }
 
-.texto-bannerSobre .link-contato {
+.texto-bannerSobre h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.texto-bannerSobre a {
     display: inline-block;
     color: #3c0e0e;
     text-decoration: underline;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bold;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 /* Imagem e endereço no banner */
@@ -92,22 +117,48 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
 
-.imagem-endereco .imagem-bannerSobre{
-    max-width: 200px;
-    border-radius: 20px;
-    margin-bottom: 1rem;
+.imagem-bannerSobre{
+    background-image: url('../../assets/velasepresentejuntos.png'); /* Defina o caminho da sua imagem */
+    position: absolute; /* Permite posicionar livremente na tela */
+    top: 30%; /* Distância do topo da tela */
+    left: 55%; /* Distância da esquerda da tela */
+    transform: translate(-57%, 250%); /* Centraliza o contêiner, ajustando o ponto de origem */
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background-size: 60%; /* Reduz o tamanho da imagem para 50% do tamanho original */
+    background-position: center; /* Centraliza a imagem dentro do contêiner */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    width: 60%; /* Ajuste conforme necessário */
+    height: 100%; /* Ajuste conforme necessário */
 }
 
 .imagem-endereco .endereco h3 {
-    font-size: 1.2rem;
-    color: #3c0e0e;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 5rem;
 }
 
-.imagem-endereco .endereco p {
-    font-size: 1rem;
-    color: #6e4d4d;
+.imagem-endereco .endereco h2 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.enderecoNome {
+   display: flex;
+}
+
+.enderecoNome p {
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.iconLocation {
+    width: 5rem; /* Define a largura */
+    height: auto; /* Mantém a proporção da imagem */
+    color: #ffffff;
 }

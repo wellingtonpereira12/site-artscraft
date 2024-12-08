@@ -1,5 +1,6 @@
 import './SobreNos.css';
 import velasepresentejuntos from '../../assets/velasepresentejuntos.png';
+import { CiLocationOn } from "react-icons/ci";
 
 function SobreNos() {
     return (
@@ -27,29 +28,34 @@ function SobreNos() {
                     </div>
                 </div>
             </div>
-
-            {/* Banner inferior */}
-            <div className="banner-sobre-nos">
-                <div className="banner-contentSobre">
-                    {/* Texto do banner */}
-                    <div className="texto-bannerSobre">
-                        <h2>Arts & Craft</h2>
-                        <p>Atendemos via WhatsApp</p>
-                        <p>Venha fazer sua encomenda</p>
-                        <a href="#contato" className="link-contato">Entre em contato</a>
+            <div  className="imagem-bannerSobre" />
+            <div className='banner-sobre-nos-controle'>
+                <div className="banner-sobre-nos1">
+                    <div className="banner-contentSobre">
+                        {/* Texto do banner */}
+                        <div className="texto-bannerSobre">
+                            <h2>Arts & Craft</h2>
+                            <p>Atendemos via WhatsApp</p>
+                            <h3>Venha fazer sua encomenda</h3>
+                            <a href="#contato" >Entre em contato</a>
+                        </div>
                     </div>
-
+                </div>
+                <div className="banner-sobre-nos2">
                     {/* Imagem e endereço */}
                     <div className="imagem-endereco">
-                        <img src={velasepresentejuntos} alt="Vela artesanal" className="imagem-bannerSobre" />
-                        <div className="endereco">
+                         <div className="endereco">
                             <h3>Onde estamos</h3>
-                            <p>Você pode nos encontrar no endereço:</p>
-                            <p>Rua José João da Silva 40, Badenfurt</p>
+                            <h2>Você pode nos encontrar no endereço:</h2>
+                            <div className='enderecoNome'>
+                                <CiLocationOn className='iconLocation'/>
+                                <p>Rua José João da Silva 40, Badenfurt</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </section>
     );
 }
