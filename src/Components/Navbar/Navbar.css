@@ -1,4 +1,3 @@
-
 *,*::before{
     margin: 0;
     box-sizing: border-box;
@@ -44,6 +43,9 @@ a.scrolled{
     flex-direction: row; /* Alinha itens horizontalmente */
     padding: 90px 300px; /* Ajuste o padding conforme necessário */
     position: fixed; /* Fixa o menu no topo */
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0); /* Adiciona fundo semi-transparente */
     transition: background-color 0.3s ease, padding 0.3s ease;
@@ -51,7 +53,7 @@ a.scrolled{
 
 .nav.scrolled {
     background-color: rgb(255, 255, 255); /* Escurece o fundo ao rolar */
-    padding: 35px 35vw; /* Ajuste o padding conforme necessário */
+    padding: 35px 20vw; /* Ajuste o padding conforme necessário */
     
 }
 
@@ -59,14 +61,14 @@ a.scrolled{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 200.5%;
-    font-family: 'Bungee', cursive; /* Define a fonte Bungee */
+    font-family: 'Poppins', sans-serif;
     font-weight: normal; /* Garante que a fonte não será em negrito */
 }
 .nav_brand.scrolled{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 150.5%;
-    font-family: 'Bungee', cursive; /* Define a fonte Bungee */
+    font-family: 'Poppins', sans-serif;
     font-weight: normal; /* Garante que a fonte não será em negrito */
 }
 .nav_menu {
@@ -75,11 +77,13 @@ a.scrolled{
     justify-content: space-around;
     gap: 3rem;
     transition: 0.4s ease-in;    
-    font-family: 'Archivo', cursive; /* Define a fonte Bungee */
+    font-family: 'Poppins', sans-serif;
 }
 .nav_toggler div{
     width: 2.5rem;
     height: 0.2rem;
+    margin: 0.4rem;
+    background: darkgray;
 }
 .nav_toggler{
     cursor: pointer;
@@ -93,7 +97,7 @@ a.scrolled{
 }    
 
 .logo {
-    width: 10vw; /* Defina a largura */
+    width: 5vw; /* Defina a largura */
     height: auto; /* Mantém a proporção da imagem */
 }
 
@@ -128,25 +132,25 @@ a.scrolled{
 
 
 .nomeEmpresa{
-    font-family: 'Bungee', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 50px;
     margin: 10px;
 }
 
 .DescrEmpresa{
-    font-family: 'Bungee', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     margin: 10px;
 }
 
 .nomeEmpresa.scrolled{
-    font-family: 'Bungee', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 50px;
     margin: 10px;
 }
 
 .DescrEmpresa.scrolled{
-    font-family: 'Bungee', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     margin: 10px;
 }
@@ -164,7 +168,7 @@ a.scrolled{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
     padding: 0.5vw;
     transition: background-color 0.3s ease;
-    font-family: 'Archivo';
+    font-family: 'Poppins', sans-serif;
     cursor: pointer; 
 }
 
@@ -232,22 +236,22 @@ a.scrolled{
     }
 
     .nomeEmpresa{
-        font-family: 'Bungee', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 40px;
         margin: 10px;
     }
     .nomeEmpresa.scrolled{
-        font-family: 'Bungee', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 40px;
         margin: 10px;
     }
     .DescrEmpresa{
-        font-family: 'Bungee', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 20px;
         margin: 10px;
     }
     .DescrEmpresa.scrolled{
-        font-family: 'Bungee', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 20px;
         margin: 10px;
     }
