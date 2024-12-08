@@ -7,23 +7,24 @@ function SobreNos() {
             <div className="sobre-nos-content">
                 {/* Texto principal */}
                 <div className="texto-principal">
-                    <h1>Sobre nós</h1>
-                    <h2>
-                        Nós oferecemos uma experiência inesquecível para amantes da arte e apreciadores de criatividade!
-                    </h2>
-                </div>
-
-                {/* Texto descritivo */}
-                <div className="descricaoSobre">
-                    <p>
-                        <strong>O melhor lugar para apreciar e adquirir arte de forma única.</strong>
-                    </p>
-                    <p>
-                        Na Arts & Craft, oferecemos uma seleção única de produtos artesanais, trazendo a beleza e a criatividade diretamente para você. 
-                    </p>
-                    <p>
-                        Com peças exclusivas e cuidadosamente escolhidas, nossa loja online celebra a arte e a expressão criativa, proporcionando uma experiência de compra única para os amantes da arte.
-                    </p>
+                        <div>
+                            <h1>Sobre nós</h1>
+                            <h2>
+                                Nós oferecemos uma experiência inesquecível para amantes da arte e apreciadores de criatividade!
+                            </h2>
+                        </div>
+                    {/* Texto descritivo */}
+                    <div className="descricaoSobre">
+                        <p>
+                            <strong>O melhor lugar para apreciar e adquirir arte de forma única.</strong>
+                        </p>
+                        <p>
+                            Na Arts & Craft, oferecemos uma seleção única de produtos artesanais, trazendo a beleza e a criatividade diretamente para você. 
+                        </p>
+                        <p>
+                            Com peças exclusivas e cuidadosamente escolhidas, nossa loja online celebra a arte e a expressão criativa, proporcionando uma experiência de compra única para os amantes da arte.
+                        </p>
+                    </div>
                 </div>
             </div>
 
