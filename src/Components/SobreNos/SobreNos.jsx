@@ -3,6 +3,12 @@ import velasepresentejuntos from '../../assets/velasepresentejuntos.png';
 import { CiLocationOn } from "react-icons/ci";
 
 function SobreNos() {
+    const phoneNumber = '47991263519'; 
+    const message = 'Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?';
+
+    const handleClickInsta = () => {
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');  
+    };
     return (
         <section id="sobre-nos" className="sobre-nos-section">
             <div className="sobre-nos-content">
@@ -37,7 +43,7 @@ function SobreNos() {
                             <h2>Arts & Craft</h2>
                             <p>Atendemos via WhatsApp</p>
                             <h3>Venha fazer sua encomenda</h3>
-                            <a href="#contato" >Entre em contato</a>
+                            <a href="#contato" onClick={handleClickInsta} >Entre em contato</a>
                         </div>
                     </div>
                 </div>

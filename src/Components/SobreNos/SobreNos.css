@@ -103,6 +103,8 @@
 }
 
 .texto-bannerSobre a {
+    position: relative; /* Posiciona o botão acima da imagem */
+    z-index: 1; /* Garante que o botão fique acima da imagem */
     display: inline-block;
     color: #3c0e0e;
     text-decoration: underline;
