@@ -17,7 +17,7 @@ function Produtos() {
                     <img src={portaFotos} alt="Porta-Fotos" />
                     <p className="preco">R$ 5,99</p>
                     <h3>Porta-Fotos</h3>
-                    <p className="descricao">Porta fotos dos momentos felizes da sua vida</p>
+                    <p className="descricaoProdutos">Porta fotos dos momentos felizes da sua vida</p>
                     <button>Peça o seu</button>
                 </div>
                 
@@ -26,7 +26,7 @@ function Produtos() {
                     <img src={portajoia} alt="Porta-Joia" />
                     <p className="preco">R$ 19,90</p>
                     <h3>Porta-Joia</h3>
-                    <p className="descricao">Porta-joias "Smug": elegância e proteção para suas joias.</p>
+                    <p className="descricaoProdutos">Porta-joias "Smug": elegância e proteção para suas joias.</p>
                     <button>Peça o seu</button>
                 </div>
                 
@@ -35,7 +35,7 @@ function Produtos() {
                     <img src= {descansCopos} alt="Kit Descanso de Copos" />
                     <p className="preco">R$ 19,90</p>
                     <h3>Kit Descanso de Copos</h3>
-                    <p className="descricao">Kit descanso de copos personalizado: estilo único com seu nome.</p>
+                    <p className="descricaoProdutos">Kit descanso de copos personalizado: estilo único com seu nome.</p>
                     <button>Peça o seu</button>
                 </div>
             </div>

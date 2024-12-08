@@ -14,7 +14,7 @@ function SobreNos() {
                 </div>
 
                 {/* Texto descritivo */}
-                <div className="descricao">
+                <div className="descricaoSobre">
                     <p>
                         <strong>O melhor lugar para apreciar e adquirir arte de forma única.</strong>
                     </p>
@@ -29,9 +29,9 @@ function SobreNos() {
 
             {/* Banner inferior */}
             <div className="banner-sobre-nos">
-                <div className="banner-content">
+                <div className="banner-contentSobre">
                     {/* Texto do banner */}
-                    <div className="texto-banner">
+                    <div className="texto-bannerSobre">
                         <h2>Arts & Craft</h2>
                         <p>Atendemos via WhatsApp</p>
                         <p>Venha fazer sua encomenda</p>
@@ -40,7 +40,7 @@ function SobreNos() {
 
                     {/* Imagem e endereço */}
                     <div className="imagem-endereco">
-                        <img src={velasepresentejuntos} alt="Vela artesanal" className="imagem-banner" />
+                        <img src={velasepresentejuntos} alt="Vela artesanal" className="imagem-bannerSobre" />
                         <div className="endereco">
                             <h3>Onde estamos</h3>
                             <p>Você pode nos encontrar no endereço:</p>

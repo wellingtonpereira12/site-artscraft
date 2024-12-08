@@ -2,7 +2,7 @@
 .velas-section {
     padding-left: 30rem;
     padding-right: 30rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
 }
 
 /* Conteúdo principal */
@@ -17,7 +17,7 @@
 /* Texto principal */
 .texto {
     max-width: 50%;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;  
 }
 
 .texto .preco {
@@ -54,6 +54,7 @@
     color: #3c0e0e;
     text-decoration: underline;
     font-size: 1rem;
+    
 }
 
 /* Imagem principal */
@@ -62,56 +63,67 @@
     
 }
 
-/* Banner de encomenda */
-.banner-encomenda {
-    background: linear-gradient(145deg, #f8d5d5, #d7b3b3); /* Gradiente */
-    border-radius: 20px;
-    margin-top: 2rem;
-    padding: 2rem;
+.banner-contentVelas {
+    display: flex;           /* Define o layout flexível */
+    justify-content: flex-end; /* Alinha os itens ao lado direito */
+    align-items: flex-end;   /* Alinha os itens ao final no eixo cruzado (vertical) */
+    gap: 2rem;               /* Define o espaço entre os itens */
+    flex-wrap: wrap;         /* Permite que os itens "quebrem linha" se necessário */
+    background: linear-gradient(10deg, #541511, #F3C7C4); /* Gradiente */
+    border-radius: 50px;
+    margin-top: 5rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end;
     gap: 1.5rem;
     flex-wrap: wrap;
-}
-
-.banner-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    padding: 2rem;
 }
 
 /* Imagem no banner */
 .imagem-banner {
-    max-width: 600px;
-    border-radius: 15px;
+    background-image: url('../../assets/Vela e presente.png'); /* Defina o caminho da sua imagem */
+    position: absolute;  
+    top: 1%; /* Distância do topo da tela */
+    left: 1%; /* Distância da esquerda da tela */
+    transform: translate(30%, 168%); /* Centraliza o contêiner, ajustando o ponto de origem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    width: 60%; /* Ajuste conforme necessário */
+    height: 100%; /* Ajuste conforme necessário */
+    background-size: 70%;
 }
 
-/* Texto no banner */
-.texto-banner h2 {
-    font-size: 1.8rem;
-    color: #3c0e0e;
-    margin-bottom: 0.5rem;
+.texto-facaIcomendas {
+    font-size: 3.5rem;
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
+    padding-left: 80rem;
+    align-items: end;
+    text-align: right;
+    font-weight: 600;
 }
 
-.texto-banner p {
-    font-size: 1rem;
-    color: #6e4d4d;
-    margin-bottom: 1rem;
+.texto-bannerVelas {
+    align-items: end;
+    text-align: right
+}
+
+.texto-bannerVelas  p {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 5rem;
     font-family: 'Poppins', sans-serif;
 }
 
 .botao-banner {
     display: inline-block;
-    background-color: #3c0e0e;
-    color: white;
+    background-color: #ffffff;
+    color: #000000;
     text-decoration: none;
-    border-radius: 30px;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    border-radius: 60px;
+    padding: 0.9rem 3.5rem;
+    font-size: 1.5rem;
     transition: background-color 0.3s ease;
+    margin-bottom: 3rem;
 }
 
 .botao-banner:hover {

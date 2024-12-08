@@ -31,13 +31,13 @@
 }
 
 /* Texto descritivo */
-.descricao p {
+.descricaoSobre p {
     color: #6e4d4d;
     font-size: 1rem;
     margin: 1rem 0;
 }
 
-.descricao p strong {
+.descricaoSobre p strong {
     color: #3c0e0e;
     font-weight: bold;
 }
@@ -55,7 +55,7 @@
 }
 
 /* Conteúdo do banner */
-.banner-content {
+.banner-contentSobre {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -63,19 +63,19 @@
 }
 
 /* Texto no banner */
-.texto-banner h2 {
+.texto-bannerSobre h2 {
     font-size: 1.8rem;
     color: #3c0e0e;
     margin-bottom: 0.5rem;
 }
 
-.texto-banner p {
+.texto-bannerSobre p {
     font-size: 1rem;
     color: #6e4d4d;
     margin-bottom: 1rem;
 }
 
-.texto-banner .link-contato {
+.texto-bannerSobre .link-contato {
     display: inline-block;
     color: #3c0e0e;
     text-decoration: underline;
@@ -91,7 +91,7 @@
     text-align: center;
 }
 
-.imagem-endereco .imagem-banner {
+.imagem-endereco .imagem-bannerSobre{
     max-width: 200px;
     border-radius: 20px;
     margin-bottom: 1rem;
