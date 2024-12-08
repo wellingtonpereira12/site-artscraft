@@ -1,5 +1,5 @@
 import './Velas.css';
-// import velasImag from '../../assets/Vela2.png';
+ import velasImag from '../../assets/Vela3.png';
 
 function Velas() {
     return (
@@ -18,7 +18,7 @@ function Velas() {
 
                 {/* Imagem principal */}
                 <div className="imagem-vela">
-                    {/* <img src={velasImag} alt="Vela em formato de árvore" /> */}
+                  <img src={velasImag} alt="Vela em formato de árvore" />
                 </div>
             </div>
 
