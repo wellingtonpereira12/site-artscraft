@@ -3,17 +3,18 @@ import './End.css'
 import logo from '../../assets/logoartsecraft.png'
 
 function End() {
-    const phoneNumber = '47984862476'; // Coloque o número de telefone com DDD
-    const message = 'Olá,%20gostaria%20de%20de%20criar%20uma%20prévia%20grátis%20da%20minha%20marca.%20Podemos%20conversar%20sobre%20os%20detalhes%20e%20etapas%20do%20projeto?';
-  
-    const handleClick = () => {
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    const phoneNumber = '47991263519'; 
+    const message = 'Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?';
+
+
+    const handleClickWhatsapp = () => {
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');  
     };
     return (
         <div className="endSectionEnd">
             <div className="endSectionEndParticao">
                 <h1>Se interesou em algum dos nossos itens?</h1>
-                <button onClick={handleClick} aria-label="Avançar para criar seu site">
+                <button onClick={handleClickWhatsapp} aria-label="Avançar para ser direcionado para o whatszapp">
                     <div className="endflecha-esquerda" />
                 </button>
             </div>
@@ -36,7 +37,7 @@ function End() {
                 </div>
                 <div className="endDado1">
                     <a href="#inicio">Inicio</a>
-                    <a href="#produtos">Produtos</a>
+                    <a href="#Produtos">Produtos</a>
                     <a href="#sobre-nos">Sobre Nós</a>
                 </div>
             </div>

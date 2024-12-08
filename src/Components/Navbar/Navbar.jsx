@@ -9,15 +9,15 @@ const Navbar = () => {
     const [active, setActive] = useState("nav_menu");
     const [toggleIcon, setToggleIcon] = useState("nav_toggler");
     const [scrolled, setScrolled] = useState(false);
-    const phoneNumber = '47984862476'; 
-    const message = 'Olá,%20gostaria%20de%20de%20criar%20uma%20prévia%20grátis%20da%20minha%20marca.%20Podemos%20conversar%20sobre%20os%20detalhes%20e%20etapas%20do%20projeto?';
+    const phoneNumber = '47991263519'; 
+    const message = 'Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?';
   
     const handleClickInsta = () => {
-        window.open(`https://www.instagram.com/reactsolucoes/`, '_blank');
+        window.open(`https://www.instagram.com/artsecraftskeby/`, '_blank');
     };
 
     const handleClickWhatsapp = () => {
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');  
     };
 
     const navToggle =() =>{
@@ -48,7 +48,7 @@ const Navbar = () => {
                 </div>
                 <ul className={active}>
                     <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#inicio">Início</a></li>
-                    <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#servico">Produtos</a></li>
+                    <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#Produtos">Produtos</a></li>
                     <li><a className={`a ${scrolled ? 'scrolled' : ''}`} href="#sobre-nos">Sobre</a></li>
                     <button onClick={handleClickWhatsapp} className={`btnNav ${scrolled ? 'scrolled' : ''}`}> 
                         <FaWhatsapp className='FaWhatsapp'/>
