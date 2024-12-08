@@ -23,7 +23,6 @@ function End() {
             <div className="endContainer">
                 <div className="endDivLogo">
                     <img src={logo} alt="ReactLogo" className="endlogo"/>
-                    <h1>Arts & Craft</h1>
                 </div>
                 <div className="endAteLogo">Até logo! Nos procure se quando quiser!</div>
                 <div className="endDado">
