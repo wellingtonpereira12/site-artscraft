@@ -36,6 +36,8 @@
 }
 
 .endflecha-esquerda {
+    position: relative; /* Posiciona o botão acima da imagem */
+    z-index: 1; /* Garante que o botão fique acima da imagem */
     width: 0;
     height: 0;
     border-top: 2vw solid transparent;
