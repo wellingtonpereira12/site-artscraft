@@ -162,7 +162,7 @@
     position: absolute; /* Permite posicionar livremente na tela */
     top: 20%; /* Distância do topo da tela */
     left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-40%, -17rem); /* Centraliza o contêiner, ajustando o ponto de origem */
+    transform: translate(-10rem, -30rem); /* Centraliza o contêiner, ajustando o ponto de origem */
     padding: 2rem;
     font-family: 'Poppins', sans-serif;
     background-size: 110%; /* Reduz o tamanho da imagem para 50% do tamanho original */
@@ -205,15 +205,19 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .hero-container {
     transform: translate(0%, 20%);
     width: 20rem; /* Ajuste a largura conforme necessário */
     height: 30rem; /* Ajuste a altura conforme necessário */
+    position: relative; /* Posiciona o botão acima da imagem */
+    z-index: 1; /* Garante que o botão fique acima da imagem */
   }
 
   .hero-container h2 {
     font-size: 40px;
+    position: relative; /* Posiciona o botão acima da imagem */
+    z-index: 1; /* Garante que o botão fique acima da imagem */
   }
   
   .hero-image-container {
@@ -221,13 +225,13 @@
     position: absolute; /* Permite posicionar livremente na tela */
     top: 20%; /* Distância do topo da tela */
     left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-30%, -40%); /* Centraliza o contêiner, ajustando o ponto de origem */
+    transform: translate(-40%, -45%); /* Centraliza o contêiner, ajustando o ponto de origem */
     padding: 2rem;
     font-family: 'Poppins', sans-serif;
-    background-size: 20rem; /* Reduz o tamanho da imagem para 50% do tamanho original */
+    background-size: 110%; /* Reduz o tamanho da imagem para 50% do tamanho original */
     background-position: center; /* Centraliza a imagem dentro do contêiner */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 20rem; /* Ajuste conforme necessário */
+    width: 60%; /* Ajuste conforme necessário */
     height: 100%; /* Ajuste conforme necessário */
   }
 }
