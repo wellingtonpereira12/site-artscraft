@@ -1,8 +1,11 @@
 /* Estilo geral da seção de velas */
 .velas-section {
-    padding-left: 30rem;
-    padding-right: 30rem;
-    padding-top: 4rem;
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Alinha horizontalmente ao centro */
+    justify-content: center; /* Alinha verticalmente ao centro */
+
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Conteúdo principal */
@@ -16,7 +19,7 @@
 
 /* Texto principal */
 .texto {
-    max-width: 50%;
+    max-width: 40rem;
     font-family: 'Poppins', sans-serif;  
 }
 
@@ -25,7 +28,7 @@
     color: #3c0e0e;
     display: inline-block;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 20rem;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -60,7 +63,10 @@
 
 /* Imagem principal */
 .imagem-vela img {
-    max-width: 500px;
+    max-width: 39rem;
+    background-size: cover; /* A imagem cobre todo o elemento */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
     
 }
 
@@ -131,3 +137,4 @@
 .botao-banner:hover {
     background-color: #5a1a1a;
 }
+
