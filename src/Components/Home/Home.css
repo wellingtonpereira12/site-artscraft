@@ -146,7 +146,7 @@
   .hero-container {
     transform: translate(0%, 20%);
     width: 45%; /* Ajuste a largura conforme necessário */
-    height: 40vh; /* Ajuste a altura conforme necessário */
+    height: 35rem; /* Ajuste a altura conforme necessário */
   }
 
   .hero-container h2 {
@@ -162,7 +162,7 @@
     position: absolute; /* Permite posicionar livremente na tela */
     top: 20%; /* Distância do topo da tela */
     left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-40%, -45%); /* Centraliza o contêiner, ajustando o ponto de origem */
+    transform: translate(-40%, -17rem); /* Centraliza o contêiner, ajustando o ponto de origem */
     padding: 2rem;
     font-family: 'Poppins', sans-serif;
     background-size: 110%; /* Reduz o tamanho da imagem para 50% do tamanho original */
@@ -205,33 +205,29 @@
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 430px) {
   .hero-container {
     transform: translate(0%, 20%);
-    width: 65%; /* Ajuste a largura conforme necessário */
-    height: 50vh; /* Ajuste a altura conforme necessário */
+    width: 20rem; /* Ajuste a largura conforme necessário */
+    height: 30rem; /* Ajuste a altura conforme necessário */
   }
 
   .hero-container h2 {
-    font-size: 60px;
+    font-size: 40px;
   }
-
-  .hero-image-container {
-    width: 120%;
-  }
-
+  
   .hero-image-container {
     background-image: url('../../assets/heroimagecontainer.png'); /* Defina o caminho da sua imagem */
     position: absolute; /* Permite posicionar livremente na tela */
     top: 20%; /* Distância do topo da tela */
     left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-30%, -45%); /* Centraliza o contêiner, ajustando o ponto de origem */
+    transform: translate(-30%, -40%); /* Centraliza o contêiner, ajustando o ponto de origem */
     padding: 2rem;
     font-family: 'Poppins', sans-serif;
-    background-size: 110%; /* Reduz o tamanho da imagem para 50% do tamanho original */
+    background-size: 20rem; /* Reduz o tamanho da imagem para 50% do tamanho original */
     background-position: center; /* Centraliza a imagem dentro do contêiner */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 60%; /* Ajuste conforme necessário */
+    width: 20rem; /* Ajuste conforme necessário */
     height: 100%; /* Ajuste conforme necessário */
   }
 }
