@@ -34,7 +34,7 @@ function SobreNos() {
                     </div>
                 </div>
             </div>
-            <div  className="imagem-bannerSobre" />
+            {/* <div  className="imagem-bannerSobre" /> */}
             <div className='banner-sobre-nos-controle'>
                 <div className="banner-sobre-nos1">
                     <div className="banner-contentSobre">

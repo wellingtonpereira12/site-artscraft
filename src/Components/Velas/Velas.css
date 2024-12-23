@@ -4,7 +4,6 @@
     flex-direction: column; /* Empilha os elementos verticalmente */
     align-items: center; /* Alinha horizontalmente ao centro */
     justify-content: center; /* Alinha verticalmente ao centro */
-
     font-family: 'Poppins', sans-serif;
 }
 
@@ -92,13 +91,15 @@
 .imagem-banner {
     background-image: url('../../assets/Vela e presente.png'); /* Defina o caminho da sua imagem */
     position: absolute;  
-    top: 1%; /* Distância do topo da tela */
-    left: 1%; /* Distância da esquerda da tela */
+    top: 1px; /* Distância do topo da tela */
+    left: 1px; /* Distância da esquerda da tela */
     transform: translate(200px, 1598px); /* Centraliza o contêiner, ajustando o ponto de origem */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 60%; /* Ajuste conforme necessário */
-    height: 100%; /* Ajuste conforme necessário */
-    background-size: 90%;
+    width: 1000px; /* Ajuste conforme necessário */
+    height: 1000px; /* Ajuste conforme necessário */
+    background-size: 950px;
+    padding: 2rem;
+    background-position: center; /* Centraliza a imagem dentro do contêiner */
 }
 
 .texto-facaIcomendas {
@@ -140,6 +141,48 @@
     background-color: #5a1a1a;
 }
 
+@media screen and (max-width: 1560px){
+    .imagem-banner {
+        transform: translate(50px, 1550px); /* Centraliza o contêiner, ajustando o ponto de origem */
+        background-size: 650px;
+    }
+    .texto-facaIcomendas {
+        padding-left: 20%;
+    }    
+    .banner-contentVelas {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 1359px){
+    .imagem-banner {
+        transform: translate(0px, 1550px); /* Centraliza o contêiner, ajustando o ponto de origem */
+    }
+
+}
+
+@media screen and (max-width: 1359px){
+    .imagem-banner {
+        transform: translate(0px, 1550px); /* Centraliza o contêiner, ajustando o ponto de origem */
+    }
+
+}
+
+@media screen and (max-width: 1250px){
+    .imagem-banner {
+        transform: translate(-70px, 1510px); /* Centraliza o contêiner, ajustando o ponto de origem */
+    }
+
+}
+
+@media screen and (max-width: 1105px){
+    .imagem-banner {
+        transform: translate(-160px, 1510px); /* Centraliza o contêiner, ajustando o ponto de origem */
+    }
+
+}
+
 @media screen and (max-width: 1060px){
     .imagem-vela img {
         max-width: 30rem;
@@ -154,7 +197,34 @@
     .velas-content {
         margin-top: 10rem;
     }
+
+    .imagem-banner {
+        transform: translate(-160px, 1890px); /* Centraliza o contêiner, ajustando o ponto de origem */
+    }
+
 }
+
+@media screen and (max-width: 1054px){
+    .imagem-banner {
+        transform: translate(-190px, 2440px); /* Centraliza o contêiner, ajustando o ponto de origem */
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    .imagem-banner {
+        transform: translate(-200px, 2440px); /* Centraliza o contêiner, ajustando o ponto de origem */
+    }
+
+}
+
+@media screen and (max-width: 866px){
+    .imagem-banner {
+        background-image: url('../../assets/Vela e presentse.png'); /* Defina o caminho da sua imagem */
+    }
+
+}
+
 
 @media screen and (max-width: 450px){
     .imagem-vela img {
