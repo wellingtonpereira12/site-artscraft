@@ -84,6 +84,8 @@
     gap: 1.5rem;
     flex-wrap: wrap;
     padding: 2rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
 }
 
 /* Imagem no banner */
@@ -92,11 +94,11 @@
     position: absolute;  
     top: 1%; /* Distância do topo da tela */
     left: 1%; /* Distância da esquerda da tela */
-    transform: translate(30%, 168%); /* Centraliza o contêiner, ajustando o ponto de origem */
+    transform: translate(200px, 1598px); /* Centraliza o contêiner, ajustando o ponto de origem */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
     width: 60%; /* Ajuste conforme necessário */
     height: 100%; /* Ajuste conforme necessário */
-    background-size: 70%;
+    background-size: 90%;
 }
 
 .texto-facaIcomendas {

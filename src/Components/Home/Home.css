@@ -6,6 +6,7 @@
   height: 50vh; /* Ajuste a altura conforme necessário */
   padding: 2rem;
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 10%;
 }
 
 .hero-container h1 {
