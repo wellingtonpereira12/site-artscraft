@@ -138,3 +138,73 @@
     background-color: #5a1a1a;
 }
 
+@media screen and (max-width: 1060px){
+    .imagem-vela img {
+        max-width: 30rem;
+        
+    }
+    .texto {
+        max-width: 60rem;
+        font-family: 'Poppins', sans-serif;  
+        margin-left: 10rem;
+    }
+
+    .velas-content {
+        margin-top: 10rem;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .imagem-vela img {
+        max-width: 30rem;
+        
+    }
+    .texto {
+        margin-left: 3rem;
+    }
+
+    .velas-content {
+        margin-top: 10rem;
+    }
+
+    .texto .descricao {
+        padding-right: 0rem;
+    }
+
+    .texto .preco {
+        font-size: 1.5rem;
+    }
+    
+    .texto h1 {
+        font-size: 6rem;
+    }
+    
+    .texto h2 {
+        font-size: 3rem;
+    }
+    
+    .texto .descricao {
+        font-size: 1.3rem;
+    }
+
+}
+
+@media screen and (max-width: 450px){
+
+    .texto .preco {
+        font-size: 1rem;
+    }
+    
+    .texto h1 {
+        font-size: 4rem;
+    }
+    
+    .texto h2 {
+        font-size: 2rem;
+    }
+    
+    .texto .descricao {
+        font-size: 1rem;
+    }
+
+}
