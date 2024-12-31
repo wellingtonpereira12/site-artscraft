@@ -57,14 +57,38 @@
     .hero-container {
         width: 90%; /* Largura total em telas menores */
         text-align: center; /* Centraliza o texto em telas menores */
+        z-index: 1;
     }
+
+    .hero-container h1 {
+        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
+        color: rgb(255, 255, 255);
+    }
+    
+    .hero-container h2 {
+        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
+        color: rgb(255, 255, 255);
+    }
+    
+    .hero-container h3 {
+        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
+        color: rgb(255, 255, 255);
+    }
+    
 
     .hero-image-container {
-        width: 90%;
-        height: 50vh;
-        margin-top: 2rem; /* Adiciona margem superior para separar texto e imagem */
+        background-image: url('../../assets/heroimagecontainer.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Faz a imagem ficar atrás do conteúdo */
     }
-
+    
     .hero-container h2 {
         font-size: 3rem; /* Ajusta o tamanho da fonte do h2 em telas menores */
     }

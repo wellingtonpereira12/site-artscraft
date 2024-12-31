@@ -3,13 +3,6 @@ import './End.css'
 import logo from '../../assets/logoartsecraft.png'
 
 function End() {
-    const phoneNumber = '47991263519'; 
-    const message = 'Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?';
-
-
-    const handleClickWhatsapp = () => {
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');  
-    };
     return (
         <div className="endSectionEnd">
             <div className="endContainerPrincipal">
