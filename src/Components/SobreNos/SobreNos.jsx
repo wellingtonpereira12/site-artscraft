@@ -1,5 +1,7 @@
 import './SobreNos.css';
 import EntreEmContato from '../../assets/EntreEmContato.png';
+import EntreEmContatoCelular from '../../assets/EntreEmContatoCelular.png';
+import React, { useState, useEffect } from 'react';
 
 function SobreNos() {
     const phoneNumber = '47991263519';
@@ -7,6 +9,23 @@ function SobreNos() {
     const handleClickWhatsapp = (ms) => {
         window.open(`https://wa.me/${phoneNumber}?text=${ms}`, '_blank');
     };
+
+    const [larguraTela, setLarguraTela] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+        setLarguraTela(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Limpeza do event listener quando o componente for desmontado
+        return () => {
+        window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    
+    const telaMenorQue600px = larguraTela < 600;
     return (
         <section id="sobre-nos" className="sobre-nos-section">
             <div className="sobre-nos-content">
@@ -30,7 +49,11 @@ function SobreNos() {
                     </div>
                 </div>      
             </div>  
-            <img src={EntreEmContato} alt="Vela e presentes" className="EntreEmContato" onClick={() => handleClickWhatsapp('Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?')}/>        
+            {telaMenorQue600px ? (
+                <img src={EntreEmContatoCelular} alt="Vela e presentes" className="EntreEmContato" onClick={() => handleClickWhatsapp('Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?')}/>        
+            ) : (
+                <img src={EntreEmContato} alt="Vela e presentes" className="EntreEmContato" onClick={() => handleClickWhatsapp('Olá, vim pelo site e me interessei pelos seus produtos. Poderia, por favor, enviar o catálogo de produtos?')}/>        
+            )}
         </section>
     );
 }
