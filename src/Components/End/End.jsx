@@ -12,12 +12,6 @@ function End() {
     };
     return (
         <div className="endSectionEnd">
-            <div className="endSectionEndParticao">
-                <h1>Você se interessou por algum dos nossos itens?</h1>
-                <button onClick={handleClickWhatsapp} aria-label="Avançar para ser direcionado para o whatszapp">
-                    <div className="endflecha-esquerda" />
-                </button>
-            </div>
             <div className="endContainerPrincipal">
             <div className="endlinha-branca" />
             <div className="endContainer">
