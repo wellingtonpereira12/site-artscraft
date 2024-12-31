@@ -1,238 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+#inicio {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh;
+    padding: 2rem;
+    padding-left: 15%;
+    box-sizing: border-box;
+}
+
 .hero-container {
-  transform: translate(74%, 30%); /* Centraliza o contêiner, ajustando o ponto de origem */
-  width: 20%; /* Ajuste a largura conforme necessário */
-  height: 50vh; /* Ajuste a altura conforme necessário */
-  padding: 2rem;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 10%;
+    font-family: 'Poppins', sans-serif;
+    width: 30%; /* Largura para o container de texto */
+    padding: 5rem;
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
 .hero-container h1 {
-  text-align: left; /* Alinhar o texto à esquerda */
-  color: #3C0E0E; /* Exemplo de cor */
-  margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
-  font-size: 24px;
+    color: #3C0E0E;
+    margin: 0 0 1rem 0;
+    font-size: 24px;
 }
 
 .hero-container h2 {
-  text-align: left; /* Alinhar o texto à esquerda */
-  color: #3C0E0E; /* Exemplo de cor */
-  margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
-  font-size: 80px;
-  line-height: 1;
+    color: #3C0E0E;
+    margin: 0 0 1rem 0;
+    font-size: 80px;
+    line-height: 1;
 }
 
 .hero-container h3 {
-  text-align: left; /* Alinhar o texto à esquerda */
-  color: #3C0E0E; /* Exemplo de cor */
-  margin: 0 0 1rem 0; /* Espaçamento entre os elementos */
-  font-size: 16px;
-  font-weight: 400; /* Define o peso como normal */
+    color: #3C0E0E;
+    margin: 0 0 1rem 0;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .hero-image-container {
-  background-image: url('../../assets/heroimagecontainer.png'); /* Defina o caminho da sua imagem */
-  position: absolute; /* Permite posicionar livremente na tela */
-  top: 30%; /* Distância do topo da tela */
-  left: 55%; /* Distância da esquerda da tela */
-  transform: translate(-40%, -50%); /* Centraliza o contêiner, ajustando o ponto de origem */
-  padding: 2rem;
-  font-family: 'Poppins', sans-serif;
-  background-size: 50%; /* Reduz o tamanho da imagem para 50% do tamanho original */
-  background-position: center; /* Centraliza a imagem dentro do contêiner */
-  background-repeat: no-repeat; /* Impede a repetição da imagem */
-  width: 60%; /* Ajuste conforme necessário */
-  height: 100%; /* Ajuste conforme necessário */
-}
-
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px chartreuse, 0 0 4px chartreuse, 0 0 5px chartreuse;
-  }
-  50% {
-    box-shadow: 0 0 2px #ffffff, 0 0 4px #ffffff, 0 0 6px chartreuse, 0 0 8px chartreuse, 0 0 10px chartreuse;
-  }
-  100% {
-    box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 3px chartreuse, 0 0 4px chartreuse, 0 0 5px chartreuse;
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-10%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-
-
-.homeLogoWhats { 
-  width: 3vw; 
-  height: auto; 
-  margin-right: 0.5vw; 
-  vertical-align: middle; 
+    background-image: url('../../assets/heroimagecontainer.png');
+    background-size: contain; /* Ajusta a imagem para caber no container */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60%; /* Largura para o container da imagem */
+    height: 80vh; /* Altura com base na altura da tela */
 }
 
 /* Media Queries para responsividade */
-@media (max-width: 1500px) {
-  .hero-container {
-    transform: translate(50%, 30%);
-  }
+@media (max-width: 1115px) {
+    #inicio {
+        flex-direction: column; /* Empilha em telas menores */
+        align-items: flex-start; /* Alinha ao topo em telas menores */
+        padding-top: 5rem;
+        padding-left: 0%;
+    }
 
-  .hero-container h2 {
-    font-size: 50px;
-  }
+    .hero-container {
+        width: 90%; /* Largura total em telas menores */
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
 
-  .hero-image-container {
-    width: 70%;
-  }
-}
+    .hero-image-container {
+        width: 90%;
+        height: 50vh;
+        margin-top: 2rem; /* Adiciona margem superior para separar texto e imagem */
+    }
 
-@media (max-width: 1080px) {
-  .hero-container {
-    transform: translate(40%, 20%);
-    width: 30%; /* Ajuste a largura conforme necessário */
-    height: 50vh; /* Ajuste a altura conforme necessário */
-  }
+    .hero-container h2 {
+        font-size: 3rem; /* Ajusta o tamanho da fonte do h2 em telas menores */
+    }
 
-  .hero-container h2 {
-    font-size: 40px;
-  }
-
-  .hero-image-container {
-    width: 100%;
-  }
-}
-
-@media (max-width: 800px) {
-  .hero-container {
-    transform: translate(10%, 20%);
-    width: 40%; /* Ajuste a largura conforme necessário */
-    height: 50vh; /* Ajuste a altura conforme necessário */
-  }
-
-  .hero-container h2 {
-    font-size: 40px;
-  }
-
-  .hero-image-container {
-    width: 100%;
-  }
-
-  .hero-image-container {
-    background-image: url('../../assets/heroimagecontainer.png'); /* Defina o caminho da sua imagem */
-    position: absolute; /* Permite posicionar livremente na tela */
-    top: 20%; /* Distância do topo da tela */
-    left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-40%, -40%); /* Centraliza o contêiner, ajustando o ponto de origem */
-    padding: 2rem;
-    font-family: 'Poppins', sans-serif;
-    background-size: 90%; /* Reduz o tamanho da imagem para 50% do tamanho original */
-    background-position: center; /* Centraliza a imagem dentro do contêiner */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 60%; /* Ajuste conforme necessário */
-    height: 100%; /* Ajuste conforme necessário */
-  }
-  
-}
-
-@media (max-width: 700px) {
-  .hero-container {
-    transform: translate(0%, 20%);
-    width: 45%; /* Ajuste a largura conforme necessário */
-    height: 35rem; /* Ajuste a altura conforme necessário */
-  }
-
-  .hero-container h2 {
-    font-size: 60px;
-  }
-
-  .hero-image-container {
-    width: 120%;
-  }
-
-  .hero-image-container {
-    background-image: url('../../assets/heroimagecontainer.png'); /* Defina o caminho da sua imagem */
-    position: absolute; /* Permite posicionar livremente na tela */
-    top: 20%; /* Distância do topo da tela */
-    left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-10rem, -30rem); /* Centraliza o contêiner, ajustando o ponto de origem */
-    padding: 2rem;
-    font-family: 'Poppins', sans-serif;
-    background-size: 110%; /* Reduz o tamanho da imagem para 50% do tamanho original */
-    background-position: center; /* Centraliza a imagem dentro do contêiner */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 60%; /* Ajuste conforme necessário */
-    height: 100%; /* Ajuste conforme necessário */
-  }
-}
-
-
-@media (max-width: 530px) {
-  .hero-container {
-    transform: translate(0%, 20%);
-    width: 55%; /* Ajuste a largura conforme necessário */
-    height: 40vh; /* Ajuste a altura conforme necessário */
-  }
-
-  .hero-container h2 {
-    font-size: 60px;
-  }
-
-  .hero-image-container {
-    width: 120%;
-  }
-
-  .hero-image-container {
-    background-image: url('../../assets/heroimagecontainer.png'); /* Defina o caminho da sua imagem */
-    position: absolute; /* Permite posicionar livremente na tela */
-    top: 20%; /* Distância do topo da tela */
-    left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-40%, -45%); /* Centraliza o contêiner, ajustando o ponto de origem */
-    padding: 2rem;
-    font-family: 'Poppins', sans-serif;
-    background-size: 110%; /* Reduz o tamanho da imagem para 50% do tamanho original */
-    background-position: center; /* Centraliza a imagem dentro do contêiner */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 60%; /* Ajuste conforme necessário */
-    height: 100%; /* Ajuste conforme necessário */
-  }
-}
-
-@media (max-width: 440px) {
-  .hero-container {
-    transform: translate(0%, 20%);
-    width: 20rem; /* Ajuste a largura conforme necessário */
-    height: 30rem; /* Ajuste a altura conforme necessário */
-    position: relative; /* Posiciona o botão acima da imagem */
-    z-index: 1; /* Garante que o botão fique acima da imagem */
-  }
-
-  .hero-container h2 {
-    font-size: 40px;
-    position: relative; /* Posiciona o botão acima da imagem */
-    z-index: 1; /* Garante que o botão fique acima da imagem */
-  }
-  
-  .hero-image-container {
-    background-image: url('../../assets/heroimagecontainer.png'); /* Defina o caminho da sua imagem */
-    position: absolute; /* Permite posicionar livremente na tela */
-    top: 20%; /* Distância do topo da tela */
-    left: 65%; /* Distância da esquerda da tela */
-    transform: translate(-40%, -45%); /* Centraliza o contêiner, ajustando o ponto de origem */
-    padding: 2rem;
-    font-family: 'Poppins', sans-serif;
-    background-size: 110%; /* Reduz o tamanho da imagem para 50% do tamanho original */
-    background-position: center; /* Centraliza a imagem dentro do contêiner */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 60%; /* Ajuste conforme necessário */
-    height: 100%; /* Ajuste conforme necessário */
-  }
+    .hero-container {
+        width: 100%; /* Largura para o container de texto */
+    }
 }

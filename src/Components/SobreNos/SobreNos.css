@@ -1,9 +1,7 @@
 /* Estilo geral da seção Sobre Nós */
 .sobre-nos-section {
     font-family: 'Poppins', sans-serif;
-    padding-left: 25rem;
-    padding-right: 25rem;
-    padding-top: 2rem;
+    padding: 2rem; /* Remove padding lateral fixo, usa padding geral */
 }
 
 /* Conteúdo principal */
@@ -12,11 +10,15 @@
     margin: 0 auto;
     text-align: left;
     margin-bottom: 2rem;
-    padding: 10rem;
+    padding: 2rem; /* Reduz o padding interno */
 }
+
 .texto-principal {
     display: flex;
+    flex-direction: column; /* Empilha os elementos em telas menores */
+    align-items: flex-start; /* Alinha à esquerda em telas menores */
 }
+
 /* Título principal */
 .texto-principal h1 {
     font-size: 1.5rem;
@@ -26,18 +28,19 @@
 }
 
 .texto-principal h2 {
-    font-size: 3.8rem;
+    font-size: 2.5rem; /* Reduz o tamanho da fonte para telas menores */
     color: #3c0e0e;
     font-family: 'Poppins', sans-serif;
-    padding-right: 10rem;
-    line-height: 1; /* Ajusta o espaçamento entre as linhas */
+    line-height: 1.2;
+    margin-bottom: 1rem; /* Adiciona margem inferior */
 }
 
 /* Texto descritivo */
 .descricaoSobre p {
     color: #3c0e0e;
-    font-size: 1.3rem;
+    font-size: 1rem; /* Reduz o tamanho da fonte para telas menores */
     margin: 1rem 0;
+    line-height: 1.5;
 }
 
 .descricaoSobre p strong {
@@ -45,122 +48,27 @@
     font-weight: bold;
 }
 
-.banner-sobre-nos-controle{
+.EntreEmContato {
+    max-width: 80%; /* A imagem ocupa no máximo 80% da largura do container */
     display: flex;
-    margin-bottom: 5rem;
+    margin: 0 auto; /* Centraliza horizontalmente o container */
 }
 
-/* Banner da seção */
-.banner-sobre-nos1 {
-    background: linear-gradient(180deg, #541511, #F3C7C4); /* Gradiente de cima para baixo */
-    border-radius: 20px 0px 0px 20px;
-    padding: 2rem;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+@media (min-width: 768px) { /* Ajusta o breakpoint conforme necessário */
+    .texto-principal {
+        flex-direction: row; /* Volta a ser linha em telas maiores */
+        align-items: center; /* Alinha verticalmente em telas maiores */
+    }
+    .texto-principal h2 {
+        font-size: 3.8rem; /* Restaura o tamanho original da fonte */
+        padding-right: 10rem;
+        margin-bottom: 0;
+    }
+    .descricaoSobre p {
+        font-size: 1.3rem; /* Restaura o tamanho original da fonte */
+    }
+    .sobre-nos-content {
+        padding: 10rem;
+    }
 }
 
-.banner-sobre-nos2 {
-    background: linear-gradient(200deg, #541511, #F3C7C4); /* Gradiente de cima para baixo */
-    border-radius: 0px 20px 20px 0px;
-    padding: 2rem;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-
-/* Conteúdo do banner */
-.banner-contentSobre {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding-right: 40rem;
-    padding-left: 1rem;
-}
-
-/* Texto no banner */
-.texto-bannerSobre h2 {
-    font-size: 6rem;
-    color: #ffffff;
-    margin-bottom: 2rem;
-    line-height: 1; /* Ajusta o espaçamento entre as linhas */
-}
-
-.texto-bannerSobre p {
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
-
-.texto-bannerSobre h3 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 400;
-}
-
-.texto-bannerSobre a {
-    position: relative; /* Posiciona o botão acima da imagem */
-    z-index: 1; /* Garante que o botão fique acima da imagem */
-    display: inline-block;
-    color: #3c0e0e;
-    text-decoration: underline;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-}
-
-/* Imagem e endereço no banner */
-.imagem-endereco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-}
-
-.imagem-bannerSobre{
-    background-image: url('../../assets/velasepresentejuntos.png'); /* Defina o caminho da sua imagem */
-    position: absolute; /* Permite posicionar livremente na tela */
-    top: 30%; /* Distância do topo da tela */
-    left: 55%; /* Distância da esquerda da tela */
-    transform: translate(-57%, 250%); /* Centraliza o contêiner, ajustando o ponto de origem */
-    padding: 2rem;
-    font-family: 'Poppins', sans-serif;
-    background-size: 60%; /* Reduz o tamanho da imagem para 50% do tamanho original */
-    background-position: center; /* Centraliza a imagem dentro do contêiner */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 60%; /* Ajuste conforme necessário */
-    height: 100%; /* Ajuste conforme necessário */
-}
-
-.imagem-endereco .endereco h3 {
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 5rem;
-}
-
-.imagem-endereco .endereco h2 {
-    font-size: 1.3rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-.enderecoNome {
-   display: flex;
-}
-
-.enderecoNome p {
-    font-size: 1.3rem;
-    color: #ffffff;
-}
-
-.iconLocation {
-    width: 5rem; /* Define a largura */
-    height: auto; /* Mantém a proporção da imagem */
-    color: #ffffff;
-}

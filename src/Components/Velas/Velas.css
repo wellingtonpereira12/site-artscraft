@@ -1,282 +1,101 @@
-/* Estilo geral da seção de velas */
-.velas-section {
-    display: flex; /* Ativa o Flexbox */
-    flex-direction: column; /* Empilha os elementos verticalmente */
-    align-items: center; /* Alinha horizontalmente ao centro */
-    justify-content: center; /* Alinha verticalmente ao centro */
+/* Estilos gerais */
+.vela-section {
     font-family: 'Poppins', sans-serif;
+    padding: 4rem; /* Aumentei o padding para dar mais espaço */
+    background-color: #f8f0e3; /* Cor de fundo bege claro */
 }
 
-/* Conteúdo principal */
-.velas-content {
+.vela-content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Responsivo para telas menores */
-    gap: 2rem;
+    flex-wrap: wrap; /* Mantém a responsividade */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 4rem; /* Espaçamento maior entre texto e imagem */
+    max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo na tela */
 }
 
-/* Texto principal */
-.texto {
-    max-width: 40rem;
-    font-family: 'Poppins', sans-serif;  
+/* Estilos do texto */
+.vela-text-container{ /* Estilos para o container do texto */
+    max-width: 50%; /* O texto ocupa até 50% da largura do container pai */
 }
 
-.texto .preco {
+.vela-preco {
     background-color: #fee6e6;
     color: #3c0e0e;
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 20rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
-.texto h1 {
-    font-size: 6rem;
-    color: #3c0e0e;
-    margin: 0;
-}
-
-.texto h2 {
-    font-size: 3rem;
-    color: #3c0e0e;
-    font-weight: 400;
-}
-
-.texto .descricao {
-    font-size: 1.3rem;
+.vela-titulo { /* Estilos para o título */
+    font-size: 4rem; /* Aumentei o tamanho da fonte */
     color: #3c0e0e;
     margin-bottom: 1rem;
-    padding-right: 20rem;
 }
 
-.texto .link-contato {
-    position: relative; /* Posiciona o botão acima da imagem */
-    z-index: 1; /* Garante que o botão fique acima da imagem */
+.vela-subtitulo { /* Estilos para o subtítulo */
+    font-size: 2rem;
+    color: #3c0e0e;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.vela-descricao {
+    font-size: 1.1rem;
+    color: #3c0e0e;
+    line-height: 1.6; /* Melhora a legibilidade */
+    margin-bottom: 2rem;
+}
+
+.vela-link-contato {
     color: #3c0e0e;
     text-decoration: underline;
-    font-size: 1rem;   
+    font-size: 1rem;
 }
 
-/* Imagem principal */
-.imagem-vela img {
-    max-width: 39rem;
-    background-size: cover; /* A imagem cobre todo o elemento */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    
+/* Estilos da imagem */
+.vela-imagem-vela img {
+    max-width: 400px; /* Largura máxima da imagem */
+    height: auto;
+    display: block;
 }
 
-.banner-contentVelas {
-    display: flex;           /* Define o layout flexível */
-    justify-content: flex-end; /* Alinha os itens ao lado direito */
-    align-items: flex-end;   /* Alinha os itens ao final no eixo cruzado (vertical) */
-    gap: 2rem;               /* Define o espaço entre os itens */
-    flex-wrap: wrap;         /* Permite que os itens "quebrem linha" se necessário */
-    background: linear-gradient(10deg, #541511, #F3C7C4); /* Gradiente */
-    border-radius: 50px;
-    margin-top: 5rem;
-    display: flex;
-    align-items: flex-end;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    padding: 2rem;
-    margin-left: 20rem;
-    margin-right: 20rem;
-}
-
-/* Imagem no banner */
 .imagem-banner {
-    background-image: url('../../assets/Vela e presente.png'); /* Defina o caminho da sua imagem */
-    position: absolute;  
-    top: 1px; /* Distância do topo da tela */
-    left: 1px; /* Distância da esquerda da tela */
-    transform: translate(200px, 1598px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    background-repeat: no-repeat; /* Impede a repetição da imagem */
-    width: 1000px; /* Ajuste conforme necessário */
-    height: 1000px; /* Ajuste conforme necessário */
-    background-size: 950px;
-    padding: 2rem;
-    background-position: center; /* Centraliza a imagem dentro do contêiner */
+    max-width: 80%;
+    display: block; /* Define como bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0;
 }
 
-.texto-facaIcomendas {
-    font-size: 3.5rem;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    padding-left: 80rem;
-    align-items: end;
-    text-align: right;
-    font-weight: 600;
+.imagem-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
-.texto-bannerVelas {
-    align-items: end;
-    text-align: right
-}
-
-.texto-bannerVelas  p {
-    font-size: 1.3rem;
-    color: #ffffff;
-    margin-bottom: 5rem;
-    font-family: 'Poppins', sans-serif;
-}
-
-.botao-banner {
-    position: relative; /* Posiciona o botão acima da imagem */
-    display: inline-block;
-    background-color: #ffffff;
-    color: #000000;
-    text-decoration: none;
-    border-radius: 60px;
-    padding: 0.9rem 3.5rem;
-    font-size: 1.5rem;
-    transition: background-color 0.3s ease;
-    margin-bottom: 3rem;
-}
-
-.botao-banner:hover {
-    background-color: #5a1a1a;
-}
-
-@media screen and (max-width: 1560px){
-    .imagem-banner {
-        transform: translate(50px, 1550px); /* Centraliza o contêiner, ajustando o ponto de origem */
-        background-size: 650px;
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .vela-content {
+        flex-direction: column; /* Empilha texto e imagem verticalmente */
+        align-items: center;
+        text-align: center; /* Centraliza o texto */
     }
-    .texto-facaIcomendas {
-        padding-left: 20%;
-    }    
-    .banner-contentVelas {
-        margin-left: 0rem;
-        margin-right: 0rem;
+    .vela-text-container{
+        max-width: 90%;
     }
-}
-
-@media screen and (max-width: 1359px){
-    .imagem-banner {
-        transform: translate(0px, 1550px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    }
-
-}
-
-@media screen and (max-width: 1359px){
-    .imagem-banner {
-        transform: translate(0px, 1550px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    }
-
-}
-
-@media screen and (max-width: 1250px){
-    .imagem-banner {
-        transform: translate(-70px, 1510px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    }
-
-}
-
-@media screen and (max-width: 1105px){
-    .imagem-banner {
-        transform: translate(-160px, 1510px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    }
-
-}
-
-@media screen and (max-width: 1060px){
-    .imagem-vela img {
-        max-width: 30rem;
-        
-    }
-    .texto {
-        max-width: 60rem;
-        font-family: 'Poppins', sans-serif;  
-        margin-left: 10rem;
-    }
-
-    .velas-content {
-        margin-top: 10rem;
-    }
-
-    .imagem-banner {
-        transform: translate(-160px, 1890px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    }
-
-}
-
-@media screen and (max-width: 1054px){
-    .imagem-banner {
-        transform: translate(-190px, 2440px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    }
-
-}
-
-@media screen and (max-width: 900px){
-    .imagem-banner {
-        transform: translate(-200px, 2440px); /* Centraliza o contêiner, ajustando o ponto de origem */
-    }
-
-}
-
-@media screen and (max-width: 866px){
-    .imagem-banner {
-        background-image: url('../../assets/Vela e presentse.png'); /* Defina o caminho da sua imagem */
-    }
-
-}
-
-
-@media screen and (max-width: 450px){
-    .imagem-vela img {
-        max-width: 30rem;
-        
-    }
-    .texto {
-        margin-left: 3rem;
-    }
-
-    .velas-content {
-        margin-top: 10rem;
-    }
-
-    .texto .descricao {
-        padding-right: 0rem;
-    }
-
-    .texto .preco {
-        font-size: 1.5rem;
-    }
-    
-    .texto h1 {
-        font-size: 6rem;
-    }
-    
-    .texto h2 {
+    .vela-titulo {
         font-size: 3rem;
     }
-    
-    .texto .descricao {
-        font-size: 1.3rem;
+    .vela-subtitulo {
+        font-size: 1.5rem;
     }
-
-}
-
-@media screen and (max-width: 450px){
-
-    .texto .preco {
-        font-size: 1rem;
+    .vela-imagem-vela img {
+        max-width: 90%;
     }
-    
-    .texto h1 {
-        font-size: 4rem;
-    }
-    
-    .texto h2 {
-        font-size: 2rem;
-    }
-    
-    .texto .descricao {
-        font-size: 1rem;
-    }
-
 }

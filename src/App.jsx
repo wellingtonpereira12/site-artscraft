@@ -5,7 +5,6 @@ import Velas from './Components/Velas/Velas';
 import SobreNos from './Components/SobreNos/SobreNos';
 import End from './Components/End/End';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import './App.css'
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
         <Produtos /> 
         <Velas /> 
         <SobreNos /> 
-        <End /> 
+        <End />  
       </div>
     </HelmetProvider>  
   )
