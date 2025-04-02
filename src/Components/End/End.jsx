@@ -28,7 +28,7 @@ function End() {
                 </div>
             </div>
             </div>
-            <div className="endDireitos">2024 - Arts & Craft - Todos os direitos reservados</div>
+            <div className="endDireitos">2024 - Arts & Crafts - Todos os direitos reservados</div>
         </div>
     )
 }

@@ -41,7 +41,7 @@ function SobreNos() {
                             <strong>O melhor lugar para apreciar e adquirir arte de forma única.</strong>
                         </p>
                         <p>
-                            Na Arts & Craft, oferecemos uma seleção única de produtos artesanais, trazendo a beleza e a criatividade diretamente para você.
+                            Na Arts & Crafts, oferecemos uma seleção única de produtos artesanais, trazendo a beleza e a criatividade diretamente para você.
                         </p>
                         <p>
                             Com peças exclusivas e cuidadosamente escolhidas, nossa loja online celebra a arte e a expressão criativa, proporcionando uma experiência de compra única para os amantes da arte.

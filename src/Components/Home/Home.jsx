@@ -25,8 +25,7 @@ function Home() {
                 <h1>Peça sua arte</h1>
                 <h2>Arts & Craft</h2>
                 <h3>
-                    Decorar nunca foi tão divertido! Nossos itens de cerâmica são feitos à mão
-                    com muito amor... e uma dose de caos criativo, para transformar seu espaço!
+                  Decorar nunca foi tão fácil (ou divertido)! Transforme qualquer ambiente com nossos itens de cerâmica fria e velas aromáticas. Tudo feito à mão com amor, paciência... e um pouco de caos criativo. Afinal, quem disse que arte precisa ser séria?"
                 </h3>
                 {telaMenorQue1115px ? (
                     <div className="hero-image-container"></div>
