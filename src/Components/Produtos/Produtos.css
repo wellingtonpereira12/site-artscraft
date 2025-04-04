@@ -1,9 +1,17 @@
+.produto-nao-encontrado {
+    font-size: 18px;
+    color: #6d6d6d;
+    grid-column: 1 / -1; /* se estiver usando grid */
+    text-align: center;
+    margin-top: 20px;
+  }
+  
 .filtro-container {
     display: flex;
     flex-wrap: wrap; /* Permite quebrar linha se necessário */
     gap: 1rem; /* Espaço entre os itens */
     justify-content: center; /* Centraliza os itens */
-    margin: 1rem auto;
+    margin: 2rem auto; 
     width: 100%;
     max-width: 800px;
   }

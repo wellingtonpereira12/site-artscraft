@@ -166,19 +166,23 @@ const produtosLista = [
                 </div>
   
               {/* Lista de produtos filtrados */}
-              <div className="produtos-grid">
-                  {produtosFiltrados.map((produto) => (
-                      <div key={produto.id} className="produto-card">
-                          <img src={produto.imagem} alt={produto.nome} />
-                          <p className="preco">{produto.preco}</p>
-                          <h3>{produto.nome}</h3>
-                          <p className="descricaoProdutos">{produto.descricao}</p>
-                          <button onClick={() => handleClickWhatsapp(produto.mensagem)}>
-                              Peça o seu
-                          </button>
-                      </div>
-                  ))}
-              </div>
+            {produtosFiltrados.length === 0 ? (
+                <p className="produto-nao-encontrado">Produto não encontrado.</p>
+            ) : (
+                <div className="produtos-grid">
+                {produtosFiltrados.map((produto) => (
+                    <div key={produto.id} className="produto-card">
+                        <img src={produto.imagem} alt={produto.nome} />
+                        <p className="preco">{produto.preco}</p>
+                        <h3>{produto.nome}</h3>
+                        <p className="descricaoProdutos">{produto.descricao}</p>
+                        <button onClick={() => handleClickWhatsapp(produto.mensagem)}>
+                            Peça o seu
+                        </button>
+                    </div>
+                ))}
+            </div>
+            )}
           </section>
       );
   }
