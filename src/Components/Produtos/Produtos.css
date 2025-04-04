@@ -1,6 +1,31 @@
+.filtro-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    gap: 1rem; /* Espaço entre os itens */
+    justify-content: center; /* Centraliza os itens */
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 800px;
+  }
+  .filtro-input{
+    flex: 1 1 100px; /* Flex-grow, flex-shrink, flex-basis */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #6d6d6d;
+    min-width: 150px;
+  }
+  .filtro-select {
+    flex: 1 1 100px; /* Flex-grow, flex-shrink, flex-basis */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #6d6d6d;
+    min-width: 150px;
+  }
+  
 .produtos-container {
     padding-top: 6rem;
-    padding-bottom: 4rem;
     display: flex; /* Ativa o Flexbox */
     flex-direction: column; /* Empilha os elementos verticalmente */
     align-items: center; /* Alinha horizontalmente ao centro */

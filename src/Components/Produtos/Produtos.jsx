@@ -10,108 +10,178 @@ import PortavelasLoveStar from './Fotos/PortavelasLoveStar.jpg';
 import PortaIncensoLovelyAir from './Fotos/PortaIncensoLovelyAir.jpg';
 import VelasPerfumadasFlorezinhasindividuais from './Fotos/VelasPerfumadasFlorezinhasindividuais.jpg';
 import VelaPerfumadaArcoiris from './Fotos/VelaPerfumadaArcoiris.jpg';
+import { useState } from 'react';
 
-function Produtos() {
-    const phoneNumber = '47991263519'; 
 
-    const handleClickWhatsapp = (ms) => {
-        window.open(`https://wa.me/${phoneNumber}?text=${ms}`, '_blank');  
-    };
-    return (
-        <section id="Produtos">
-            <div className="produtos-container">
-                <h1>Crafts</h1>
-                <h2>Conheça nossos produtinhos exclusivos pensados e preparados a mão. </h2>
-            </div>
-            <div className="produtos-grid">
-                {/* Buquê de Flores */}
-                <div className="produto-card">
-                    <img src= {flores} alt="Buquê de Flores" />
-                    <p className="preco">R$ 89,90</p>
-                    <h3>O buquê de flores Perfumadas</h3>
-                    <p className="descricaoProdutos">Um buquê de velas florais, com aromas suaves e toque romântico.</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Buquê de Flores. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
+const produtosLista = [
+    {
+      id: 1,
+      nome: 'Buquê de Flores Perfumadas',
+      preco: 'R$ 89,90',
+      descricao: 'Um buquê de velas florais, com aromas suaves e toque romântico.',
+      imagem: flores,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Buquê de Flores. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 2,
+      nome: 'Kit Vela Espiral Romântica',
+      preco: 'R$ 19,90',
+      descricao: 'Ilumine seus momentos especiais com a Vela Espiral Romântica. Seu design único em formato espiral e os delicados corações pintados à mão trazem um toque de romantismo e elegância para qualquer ambiente.',
+      imagem: VelaEspiralRomântica,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Vela Espiral Romântica. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 3,
+      nome: 'Cera Perfumada em Formato de Coração',
+      preco: 'R$ 3,90',
+      descricao: 'Cera perfumada artesanal em formato de coração. Ideal para aromatizar ambientes pequenos. Diversas fragrâncias disponíveis.',
+      imagem: CeraPerfumada,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Cera Perfumada em Formato de Coração. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 4,
+      nome: 'Minibuquê Perfumado',
+      preco: 'R$ 25,90',
+      descricao: 'Mini buquê de flores feito com velas aromatizadas, perfeito para perfumar e decorar pequenos espaços com charme e delicadeza.',
+      imagem: MiniBuquêAromatizado,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Mini Buquê Aromatizado. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 5,
+      nome: 'Mini Porta-Fotos',
+      preco: 'R$ 5,99',
+      descricao: 'Porta fotos dos momentos felizes da sua vida',
+      imagem: portaFotos,
+      categoria: 'Cerâmica',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Porta-fotos. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 6,
+      nome: 'Porta-velas “Love Star”',
+      preco: 'R$ 24,99',
+      descricao: 'Porta-velas elegante e charmoso, perfeito para criar um ambiente aconchegante',
+      imagem: PortavelasLoveStar,
+      categoria: 'Cerâmica',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Porta-velas “Love Star”. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 7,
+      nome: 'Porta Incenso “Lovely Air”',
+      preco: 'R$ 29,90',
+      descricao: 'Porta-incenso sofisticado e delicado, ideal para perfumar e harmonizar seu ambiente',
+      imagem: PortaIncensoLovelyAir,
+      categoria: 'Cerâmica',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Porta Incenso “Lovely Air”. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 8,
+      nome: 'Velas Perfumadas “Florezinhas” individuais',
+      preco: 'R$ 4,50',
+      descricao: 'Velas perfumadas individuais, delicadas e charmosas, perfeitas para aromatizar seu ambiente',
+      imagem: VelasPerfumadasFlorezinhasindividuais,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Velas Perfumadas “Florezinhas” individuais. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 9,
+      nome: 'Vela Perfumada “Arco-Íris"',
+      preco: 'R$ 19,90',
+      descricao: 'Vela perfumada colorida, vibrante e aromática, ideal para alegrar e perfumar seu espaço',
+      imagem: VelaPerfumadaArcoiris,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Vela Perfumada “Arco-Íris". Poderia me informar como proceder para comprá-lo?'
+    },
+    // Produtos comentados, mas disponíveis:
+    /*{
+      id: 10,
+      nome: 'Porta-Joia "Smug"',
+      preco: 'R$ 19,90',
+      descricao: 'Porta-joias "Smug": elegância e proteção para suas joias.',
+      imagem: portajoia,
+      categoria: 'Cerâmica',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Porta-Joia. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 11,
+      nome: 'Kit Descanso de Copos Personalizado',
+      preco: 'R$ 19,90',
+      descricao: 'Kit descanso de copos personalizado: estilo único com seu nome.',
+      imagem: descansCopos,
+      categoria: 'Cerâmica',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Kit Descanso de Copos. Poderia me informar como proceder para comprá-lo?'
+    }*/
+  ];
+  
+  function Produtos() {
+      const phoneNumber = '47991263519'; 
+      const [filtro, setFiltro] = useState('');
+      const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
+  
+      const categoriasUnicas = [...new Set(produtosLista.map(produto => produto.categoria))];
+  
+      const handleClickWhatsapp = (ms) => {
+          window.open(`https://wa.me/${phoneNumber}?text=${ms}`, '_blank');  
+      };
+  
+      // Filtro combinado: nome + categoria
+      const produtosFiltrados = produtosLista.filter((produto) => {
+          const nomeMatch = produto.nome.toLowerCase().includes(filtro.toLowerCase());
+          const categoriaMatch = categoriaSelecionada === '' || produto.categoria === categoriaSelecionada;
+          return nomeMatch && categoriaMatch;
+      });
+  
+      return (
+          <section id="Produtos">
+                <div className="produtos-container">
+                  <h1>Crafts</h1>
+                  <h2>Conheça nossos produtinhos exclusivos pensados e preparados a mão. </h2>
                 </div>
-                {/* Vela Espiral Romântica */}
-                <div className="produto-card">
-                    <img src= {VelaEspiralRomântica} alt="Vela Espiral Romântica" />
-                    <p className="preco">R$ 19,90</p>
-                    <h3>Kit Vela Espiral Romântica</h3>
-                    <p className="descricaoProdutos">Ilumine seus momentos especiais com a Vela Espiral Romântica. Seu design único em formato espiral e os delicados corações pintados à mão trazem um toque de romantismo e elegância para qualquer ambiente.</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Vela Espiral Romântica. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
+
+                <div className="filtro-container">
+                {/* Campo de busca */}
+                <input
+                    type="text"
+                    placeholder="Buscar produto..."
+                    value={filtro}
+                    onChange={(e) => setFiltro(e.target.value)}
+                    className="filtro-input"
+                />
+                {/* Caixa de seleção de categorias */}
+                <select
+                    value={categoriaSelecionada}
+                    onChange={(e) => setCategoriaSelecionada(e.target.value)}
+                    className="filtro-select"
+                >
+                    <option value="">Todas as categorias</option>
+                    {categoriasUnicas.map((categoria, index) => (
+                        <option key={index} value={categoria}>
+                            {categoria}
+                        </option>
+                    ))}
+                </select>
                 </div>
-                {/* Cera Perfumada em Formato de Coração */}
-                <div className="produto-card">
-                    <img src= {CeraPerfumada} alt="Cera Perfumada em Formato de Coração" />
-                    <p className="preco">R$ 3,90</p>
-                    <h3>Cera Perfumada em Formato de Coração</h3>
-                    <p className="descricaoProdutos">Cera perfumada artesanal em formato de coração. Ideal para aromatizar ambientes pequenos. Diversas fragrâncias disponíveis.                    .</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Cera Perfumada em Formato de Coração. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-                {/* Mini Buquê Aromatizado */}
-                <div className="produto-card">
-                    <img src= {MiniBuquêAromatizado} alt="Mini Buquê Aromatizado" />
-                    <p className="preco">R$ 25,90</p>
-                    <h3>Minibuquê Perfumado</h3>
-                    <p className="descricaoProdutos">Mini buquê de flores feito com velas aromatizadas, perfeito para perfumar e decorar pequenos espaços com charme e delicadeza..                    .</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Mini Buquê Aromatizado. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-                {/* Porta-Fotos */}
-                <div className="produto-card">
-                    <img src={portaFotos} alt="Porta-Fotos" />
-                    <p className="preco">R$ 5,99</p>
-                    <h3>Mini Porta-Fotos</h3>
-                    <p className="descricaoProdutos">Porta fotos dos momentos felizes da sua vida</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Porta-fotos. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-               {/* 
-                <div className="produto-card">
-                    <img src={portajoia} alt="Porta-Joia" />
-                    <p className="preco">R$ 19,90</p>
-                    <h3>Porta-Joia</h3>
-                    <p className="descricaoProdutos">Porta-joias "Smug": elegância e proteção para suas joias.</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Porta-Joia. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-                /* 
-                <div className="produto-card">
-                    <img src= {descansCopos} alt="Kit Descanso de Copos" />
-                    <p className="preco">R$ 19,90</p>
-                    <h3>Kit Descanso de Copos</h3>
-                    <p className="descricaoProdutos">Kit descanso de copos personalizado: estilo único com seu nome.</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Kit Descanso de Copos. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>*/}
-                 {/* Porta-Fotos */}
-                 <div className="produto-card">
-                    <img src={PortavelasLoveStar} alt="Porta-velas-Love-Star" />
-                    <p className="preco">R$ 24,99</p>
-                    <h3>Porta-velas “Love Star”</h3>
-                    <p className="descricaoProdutos">Porta-velas elegante e charmoso, perfeito para criar um ambiente aconchegante</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Porta-velas “Love Star”. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-                <div className="produto-card">
-                    <img src={PortaIncensoLovelyAir} alt="Porta-Incenso-Lovely-Air" />
-                    <p className="preco">R$ 29,90</p>
-                    <h3>Porta Incenso “Lovely Air”</h3>
-                    <p className="descricaoProdutos">Porta-incenso sofisticado e delicado, ideal para perfumar e harmonizar seu ambiente</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Porta Incenso “Lovely Air”. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-                <div className="produto-card">
-                    <img src={VelasPerfumadasFlorezinhasindividuais} alt="Velas-Perfumadas-Florezinhas-individuais" />
-                    <p className="preco">R$ 4,50</p>
-                    <h3>Velas Perfumadas “Florezinhas” individuais</h3>
-                    <p className="descricaoProdutos">Velas perfumadas individuais, delicadas e charmosas, perfeitas para aromatizar seu ambiente</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Velas Perfumadas “Florezinhas” individuais. Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-                <div className="produto-card">
-                    <img src={VelaPerfumadaArcoiris} alt="Vela-Perfumada-Arco-Íris" />
-                    <p className="preco">R$ 19,90</p>
-                    <h3>Vela Perfumada “Arco-Íris"</h3>
-                    <p className="descricaoProdutos">Vela perfumada colorida, vibrante e aromática, ideal para alegrar e perfumar seu espaço</p>
-                    <button onClick={() => handleClickWhatsapp('Olá, visitei o site e fiquei interessado no Vela Perfumada “Arco-Íris". Poderia me informar como proceder para comprá-lo?')}>Peça o seu</button>
-                </div>
-            </div>
-        </section>
-    )
-}
+  
+              {/* Lista de produtos filtrados */}
+              <div className="produtos-grid">
+                  {produtosFiltrados.map((produto) => (
+                      <div key={produto.id} className="produto-card">
+                          <img src={produto.imagem} alt={produto.nome} />
+                          <p className="preco">{produto.preco}</p>
+                          <h3>{produto.nome}</h3>
+                          <p className="descricaoProdutos">{produto.descricao}</p>
+                          <button onClick={() => handleClickWhatsapp(produto.mensagem)}>
+                              Peça o seu
+                          </button>
+                      </div>
+                  ))}
+              </div>
+          </section>
+      );
+  }
+  
 
 export default Produtos;
