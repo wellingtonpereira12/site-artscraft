@@ -6,7 +6,7 @@
     margin-top: 20px;
   }
   
-.filtro-container {
+  .filtro-container {
     display: flex;
     flex-wrap: wrap; /* Permite quebrar linha se necessário */
     gap: 1rem; /* Espaço entre os itens */
@@ -14,15 +14,11 @@
     margin: 2rem auto; 
     width: 100%;
     max-width: 800px;
+    padding: 0 1rem; /* Adiciona "borda" (espaço) nas laterais */
+    box-sizing: border-box; /* Garante que padding não ultrapasse o max-width */
   }
-  .filtro-input{
-    flex: 1 1 100px; /* Flex-grow, flex-shrink, flex-basis */
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    color: #6d6d6d;
-    min-width: 150px;
-  }
+  
+  .filtro-input,
   .filtro-select {
     flex: 1 1 100px; /* Flex-grow, flex-shrink, flex-basis */
     padding: 0.5rem;
@@ -31,6 +27,7 @@
     color: #6d6d6d;
     min-width: 150px;
   }
+  
   
 .produtos-container {
     padding-top: 6rem;
