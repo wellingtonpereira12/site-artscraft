@@ -11,18 +11,22 @@ import PortaIncensoLovelyAir from './Fotos/PortaIncensoLovelyAir.jpg';
 import VelasPerfumadasFlorezinhasindividuais from './Fotos/VelasPerfumadasFlorezinhasindividuais.jpg';
 import VelaPerfumadaArcoiris from './Fotos/VelaPerfumadaArcoiris.jpg';
 import KitDifusorRechaudPastilhasAromatizantes  from './Fotos/KitDifusorRechaudPastilhasAromatizantes.jpeg';
-import { useState } from 'react';
+import VelaRosa  from './Fotos/VelaRosa.jpeg';
+import MinibuqueRosa from './Fotos/MinibuqueRosa.jpeg';
+import MinibuqueFlor from './Fotos/MinibuqueFlor.jpeg';
 
+import { useState } from 'react';
+ 
 
 const produtosLista = [
     {
       id: 1,
-      nome: 'Buquê de Flores Perfumadas',
+      nome: 'Buquê de Flores Perfumadas - G',
       preco: 'R$ 89,90',
       descricao: 'Um buquê de velas florais, com aromas suaves e toque romântico.',
       imagem: flores,
       categoria: 'Velas',
-      mensagem: 'Olá, visitei o site e fiquei interessado no Buquê de Flores. Poderia me informar como proceder para comprá-lo?'
+      mensagem: 'Olá, visitei o site e fiquei interessado no Buquê de Flores Perfumadas - G. Poderia me informar como proceder para comprá-lo?'
     },
     {
       id: 2,
@@ -31,25 +35,25 @@ const produtosLista = [
       descricao: 'Ilumine seus momentos especiais com a Vela Espiral Romântica. Seu design único em formato espiral e os delicados corações pintados à mão trazem um toque de romantismo e elegância para qualquer ambiente.',
       imagem: VelaEspiralRomântica,
       categoria: 'Velas',
-      mensagem: 'Olá, visitei o site e fiquei interessado no Vela Espiral Romântica. Poderia me informar como proceder para comprá-lo?'
+      mensagem: 'Olá, visitei o site e fiquei interessado no Kit Vela Espiral Romântica. Poderia me informar como proceder para comprá-lo?'
     },
     {
       id: 3,
-      nome: 'Cera Perfumada em Formato de Coração',
-      preco: 'R$ 3,90',
+      nome: 'Pacote de Cera Perfumada em Formato de Coração',
+      preco: 'R$ 9,90',
       descricao: 'Cera perfumada artesanal em formato de coração. Ideal para aromatizar ambientes pequenos. Diversas fragrâncias disponíveis.',
       imagem: CeraPerfumada,
       categoria: 'Velas',
-      mensagem: 'Olá, visitei o site e fiquei interessado no Cera Perfumada em Formato de Coração. Poderia me informar como proceder para comprá-lo?'
+      mensagem: 'Olá, visitei o site e fiquei interessado no Pacote de Cera Perfumada em Formato de Coração. Poderia me informar como proceder para comprá-lo?'
     },
     {
       id: 4,
-      nome: 'Minibuquê Perfumado',
-      preco: 'R$ 25,90',
+      nome: 'Buquê de Flores Perfumadas - P',
+      preco: 'R$ 24,90',
       descricao: 'Mini buquê de flores feito com velas aromatizadas, perfeito para perfumar e decorar pequenos espaços com charme e delicadeza.',
       imagem: MiniBuquêAromatizado,
       categoria: 'Velas',
-      mensagem: 'Olá, visitei o site e fiquei interessado no Mini Buquê Aromatizado. Poderia me informar como proceder para comprá-lo?'
+      mensagem: 'Olá, visitei o site e fiquei interessado no Buquê de Flores Perfumadas - P. Poderia me informar como proceder para comprá-lo?'
     },
     {
       id: 5,
@@ -58,7 +62,7 @@ const produtosLista = [
       descricao: 'Porta fotos dos momentos felizes da sua vida',
       imagem: portaFotos,
       categoria: 'Cerâmica',
-      mensagem: 'Olá, visitei o site e fiquei interessado no Porta-fotos. Poderia me informar como proceder para comprá-lo?'
+      mensagem: 'Olá, visitei o site e fiquei interessado no Mini Porta-Fotos. Poderia me informar como proceder para comprá-lo?'
     },
     {
       id: 6,
@@ -81,7 +85,7 @@ const produtosLista = [
     {
       id: 8,
       nome: 'Velas Perfumadas “Florezinhas” individuais',
-      preco: 'R$ 4,50',
+      preco: 'R$ 5,00',
       descricao: 'Velas perfumadas individuais, delicadas e charmosas, perfeitas para aromatizar seu ambiente',
       imagem: VelasPerfumadasFlorezinhasindividuais,
       categoria: 'Velas',
@@ -90,7 +94,7 @@ const produtosLista = [
     {
       id: 9,
       nome: 'Vela Perfumada “Arco-Íris"',
-      preco: 'R$ 19,90',
+      preco: 'R$ 11,90',
       descricao: 'Vela perfumada colorida, vibrante e aromática, ideal para alegrar e perfumar seu espaço',
       imagem: VelaPerfumadaArcoiris,
       categoria: 'Velas',
@@ -98,12 +102,39 @@ const produtosLista = [
     },
     {
       id: 10,
-      nome: 'Kit Difusor Rechaud + Pastilhas Aromatizantes"',
+      nome: 'Kit Difusor Rechaud + Pastilhas Aromatizantes',
       preco: 'R$ 89,90',
       descricao: 'Deixe seu ambiente mais aconchegante e perfumado! Ideal para relaxar, decorar e transformar o clima da sua casa com aromas envolventes.',
       imagem: KitDifusorRechaudPastilhasAromatizantes,
       categoria: 'Velas',
       mensagem: 'Olá, visitei o site e fiquei interessado no Kit Difusor Rechaud + Pastilhas Aromatizantes. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 11,
+      nome: 'Vela Rosa',
+      preco: 'R$ 11,90',
+      descricao: 'Com aroma suave e toque romântico, é ideal para criar um clima acolhedor e cheio de charme em qualquer ambiente.',
+      imagem: VelaRosa,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Vela Rosa. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 12,
+      nome: 'Mini buquê Rosa',
+      preco: 'R$ 19,90',
+      descricao: 'Delicado e cheio de charme, é perfeito para presentear ou decorar com um toque romântico e sofisticado.',
+      imagem: MinibuqueRosa,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Mini buquê Rosa. Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 13,
+      nome: 'Mini buquê Flor',
+      preco: 'R$ 9,90',
+      descricao: 'Colorido e encantador, é ideal para presentear com afeto ou decorar com um toque especial de alegria.',
+      imagem: MinibuqueFlor,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Mini buquê Flor. Poderia me informar como proceder para comprá-lo?'
     },
     // Produtos comentados, mas disponíveis:
     /*{
