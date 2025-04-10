@@ -10,6 +10,7 @@ import PortavelasLoveStar from './Fotos/PortavelasLoveStar.jpg';
 import PortaIncensoLovelyAir from './Fotos/PortaIncensoLovelyAir.jpg';
 import VelasPerfumadasFlorezinhasindividuais from './Fotos/VelasPerfumadasFlorezinhasindividuais.jpg';
 import VelaPerfumadaArcoiris from './Fotos/VelaPerfumadaArcoiris.jpg';
+import KitDifusorRechaudPastilhasAromatizantes  from './Fotos/KitDifusorRechaudPastilhasAromatizantes.jpeg';
 import { useState } from 'react';
 
 
@@ -94,6 +95,15 @@ const produtosLista = [
       imagem: VelaPerfumadaArcoiris,
       categoria: 'Velas',
       mensagem: 'Olá, visitei o site e fiquei interessado no Vela Perfumada “Arco-Íris". Poderia me informar como proceder para comprá-lo?'
+    },
+    {
+      id: 10,
+      nome: 'Kit Difusor Rechaud + Pastilhas Aromatizantes"',
+      preco: 'R$ 89,90',
+      descricao: 'Deixe seu ambiente mais aconchegante e perfumado! Ideal para relaxar, decorar e transformar o clima da sua casa com aromas envolventes.',
+      imagem: KitDifusorRechaudPastilhasAromatizantes,
+      categoria: 'Velas',
+      mensagem: 'Olá, visitei o site e fiquei interessado no Kit Difusor Rechaud + Pastilhas Aromatizantes. Poderia me informar como proceder para comprá-lo?'
     },
     // Produtos comentados, mas disponíveis:
     /*{
