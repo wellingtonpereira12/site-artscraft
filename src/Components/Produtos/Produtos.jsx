@@ -1,4 +1,9 @@
 import './Produtos.css';
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { useState } from 'react';
+import CartModal from '../Carrinho/Carrinho'; // Certifique-se de ter este componente
+
+// Importações de imagens
 import descansCopos from './Fotos/kit-descanso-copos.png';
 import portajoia from './Fotos/porta-joia.png';
 import portaFotos from './Fotos/porta-fotos.png';
@@ -11,13 +16,10 @@ import PortavelasLoveStar from './Fotos/PortavelasLoveStar.jpg';
 import PortaIncensoLovelyAir from './Fotos/PortaIncensoLovelyAir.jpg';
 import VelasPerfumadasFlorezinhasindividuais from './Fotos/VelasPerfumadasFlorezinhasindividuais.jpg';
 import VelaPerfumadaArcoiris from './Fotos/VelaPerfumadaArcoiris.jpg';
-import KitDifusorRechaudPastilhasAromatizantes  from './Fotos/KitDifusorRechaudPastilhasAromatizantes.jpeg';
-import VelaRosa  from './Fotos/VelaRosa.jpeg';
+import KitDifusorRechaudPastilhasAromatizantes from './Fotos/KitDifusorRechaudPastilhasAromatizantes.jpeg';
+import VelaRosa from './Fotos/VelaRosa.jpeg';
 import MinibuqueRosa from './Fotos/MinibuqueRosa.jpeg';
 import MinibuqueFlor from './Fotos/MinibuqueFlor.jpeg';
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-
-import { useState } from 'react';
  
 const produtosLista = [
   {
@@ -52,7 +54,7 @@ const produtosLista = [
     nome: 'Buquê de Flores Perfumadas - P',
     preco: 'R$ 24,90',
     descricao: 'Mini buquê de flores feito com velas aromatizadas, perfeito para perfumar e decorar pequenos espaços com charme e delicadeza.',
-    imagem: [MiniBuquêAromatizado1,MiniBuquêAromatizado],
+    imagem: [MiniBuquêAromatizado1, MiniBuquêAromatizado],
     categoria: 'Velas',
     mensagem: 'Olá, visitei o site e fiquei interessado no Buquê de Flores Perfumadas - P. Poderia me informar como proceder para comprá-lo?'
   },
@@ -136,139 +138,149 @@ const produtosLista = [
     imagem: [MinibuqueFlor],
     categoria: 'Velas',
     mensagem: 'Olá, visitei o site e fiquei interessado no Mini buquê Flor. Poderia me informar como proceder para comprá-lo?'
-  },
-  // Produtos comentados, mas disponíveis:
-  /*{
-    id: 10,
-    nome: 'Porta-Joia "Smug"',
-    preco: 'R$ 19,90',
-    descricao: 'Porta-joias "Smug": elegância e proteção para suas joias.',
-    imagem: portajoia,
-    categoria: 'Cerâmica',
-    mensagem: 'Olá, visitei o site e fiquei interessado no Porta-Joia. Poderia me informar como proceder para comprá-lo?'
-  },
-  {
-    id: 11,
-    nome: 'Kit Descanso de Copos Personalizado',
-    preco: 'R$ 19,90',
-    descricao: 'Kit descanso de copos personalizado: estilo único com seu nome.',
-    imagem: descansCopos,
-    categoria: 'Cerâmica',
-    mensagem: 'Olá, visitei o site e fiquei interessado no Kit Descanso de Copos. Poderia me informar como proceder para comprá-lo?'
-  }*/
-];
-function Produtos() {
-    const trocarImagemComTransicao = (id, imagens, direcao) => {
-      setAnimandoImagem(prev => ({ ...prev, [id]: true }));
-    
-      setTimeout(() => {
-        setIndicesImagem(prev => {
-          const atual = prev[id] || 0;
-          const novoIndice =
-            direcao === 'proxima'
-              ? atual === imagens.length - 1 ? 0 : atual + 1
-              : atual === 0 ? imagens.length - 1 : atual - 1;
-    
-          return { ...prev, [id]: novoIndice };
-        });
-    
-        setAnimandoImagem(prev => ({ ...prev, [id]: false }));
-      }, 250); // tempo do fade-out
-    };
-
-    const phoneNumber = '47991263519';
-    const [filtro, setFiltro] = useState('');
-    const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
-  
-    const categoriasUnicas = [...new Set(produtosLista.map(produto => produto.categoria))];
-  
-    const handleClickWhatsapp = (ms) => {
-      window.open(`https://wa.me/${phoneNumber}?text=${ms}`, '_blank');  
-    };
-  
-    const produtosFiltrados = produtosLista.filter((produto) => {
-      const nomeMatch = produto.nome.toLowerCase().includes(filtro.toLowerCase());
-      const categoriaMatch = categoriaSelecionada === '' || produto.categoria === categoriaSelecionada;
-      return nomeMatch && categoriaMatch;
-    });
-  
-    const [indicesImagem, setIndicesImagem] = useState({});
-  
-    const imagemAnterior = (id, imagens) => {
-      setIndicesImagem(prev => ({
-        ...prev,
-        [id]: (prev[id] || 0) === 0 ? imagens.length - 1 : (prev[id] || 0) - 1
-      }));
-    };
-  
-    const proximaImagem = (id, imagens) => {
-      setIndicesImagem(prev => ({
-        ...prev,
-        [id]: (prev[id] || 0) === imagens.length - 1 ? 0 : (prev[id] || 0) + 1
-      }));
-    };
-
-    const [animandoImagem, setAnimandoImagem] = useState({});
-  
-    return (
-      <section id="Produtos">
-        <div className="produtos-container">
-          <h1>Crafts</h1>
-          <h2>Conheça nossos produtinhos exclusivos pensados e preparados à mão.</h2>
-        </div>
-  
-        <div className="filtro-container">
-          <input
-            type="text"
-            placeholder="Buscar produto..."
-            value={filtro}
-            onChange={(e) => setFiltro(e.target.value)}
-            className="filtro-input"
-          />
-          <select
-            value={categoriaSelecionada}
-            onChange={(e) => setCategoriaSelecionada(e.target.value)}
-            className="filtro-select"
-          >
-            <option value="">Todas as categorias</option>
-            {categoriasUnicas.map((categoria, index) => (
-              <option key={index} value={categoria}>{categoria}</option>
-            ))}
-          </select>
-        </div>
-  
-        {produtosFiltrados.length === 0 ? (
-          <p className="produto-nao-encontrado">Produto não encontrado.</p>
-        ) : (
-          <div className="produtos-grid">
-            {produtosFiltrados.map((produto) => {
-              const indiceAtual = indicesImagem[produto.id] || 0;
-              return (
-                <div key={produto.id} className="produto-card">
-                  <div className="imagem-container">
-                    <img
-                      src={produto.imagem[indiceAtual]}
-                      alt={produto.nome}
-                      className={`imagem-produto ${animandoImagem[produto.id] ? 'fade-out' : ''}`}
-                    />
-                    {produto.imagem.length > 1 && (
-                      <>
-                          <span className="seta seta-esquerda" onClick={() => trocarImagemComTransicao(produto.id, produto.imagem, 'anterior')}><FaArrowAltCircleLeft /></span>
-                          <span className="seta seta-direita" onClick={() => trocarImagemComTransicao(produto.id, produto.imagem, 'proxima')}><FaArrowAltCircleRight /></span>
-                      </>
-                    )}
-                  </div>
-                  <p className="preco">{produto.preco}</p>
-                  <h3>{produto.nome}</h3>
-                  <p className="descricaoProdutos">{produto.descricao}</p>
-                  <button onClick={() => handleClickWhatsapp(produto.mensagem)}>Peça o seu</button>
-                </div>
-              );
-            })}
-          </div>
-        )}
-      </section>
-    );
   }
+];
+
+function Produtos({ carrinhoItens, setCarrinhoItens }) {
+  const [indicesImagem, setIndicesImagem] = useState({});
+  const [animandoImagem, setAnimandoImagem] = useState({});
+  const [filtro, setFiltro] = useState('');
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
+  const [carrinhoAberto, setCarrinhoAberto] = useState(false);
+  const phoneNumber = '47991263519';
+
+  const trocarImagemComTransicao = (id, imagens, direcao) => {
+    setAnimandoImagem(prev => ({ ...prev, [id]: true }));
+    
+    setTimeout(() => {
+      setIndicesImagem(prev => {
+        const atual = prev[id] || 0;
+        const novoIndice = direcao === 'proxima' 
+          ? (atual + 1) % imagens.length 
+          : (atual - 1 + imagens.length) % imagens.length;
+        
+        return { ...prev, [id]: novoIndice };
+      });
+      setAnimandoImagem(prev => ({ ...prev, [id]: false }));
+    }, 250);
+  };
+
+  const adicionarAoCarrinho = (produto) => {
+    setCarrinhoItens(prev => {
+      const itemExistente = prev.find(item => item.id === produto.id);
+      return itemExistente 
+        ? prev.map(item => 
+            item.id === produto.id 
+              ? { ...item, quantidade: item.quantidade + 1 } 
+              : item
+          )
+        : [...prev, { ...produto, quantidade: 1 }];
+    });
+    setCarrinhoAberto(true);
+  };
+
+  const handleClickWhatsapp = (ms) => {
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(ms)}`, '_blank');
+  };
+
+  const categoriasUnicas = [...new Set(produtosLista.map(produto => produto.categoria))];
   
-  export default Produtos;
+  const produtosFiltrados = produtosLista.filter(produto => {
+    const nomeMatch = produto.nome.toLowerCase().includes(filtro.toLowerCase());
+    const categoriaMatch = !categoriaSelecionada || produto.categoria === categoriaSelecionada;
+    return nomeMatch && categoriaMatch;
+  });
+
+  return (
+    <section id="Produtos">
+      <div className="produtos-container">
+        <h1>Crafts</h1>
+        <h2>Conheça nossos produtinhos exclusivos pensados e preparados à mão.</h2>
+      </div>
+
+      <div className="filtro-container">
+        <input
+          type="text"
+          placeholder="Buscar produto..."
+          value={filtro}
+          onChange={(e) => setFiltro(e.target.value)}
+          className="filtro-input"
+        />
+        <select
+          value={categoriaSelecionada}
+          onChange={(e) => setCategoriaSelecionada(e.target.value)}
+          className="filtro-select"
+        >
+          <option value="">Todas as categorias</option>
+          {categoriasUnicas.map((categoria, index) => (
+            <option key={index} value={categoria}>{categoria}</option>
+          ))}
+        </select>
+      </div>
+
+      {produtosFiltrados.length === 0 ? (
+        <p className="produto-nao-encontrado">Produto não encontrado.</p>
+      ) : (
+        <div className="produtos-grid">
+          {produtosFiltrados.map((produto) => {
+            const indiceAtual = indicesImagem[produto.id] || 0;
+            return (
+              <div key={produto.id} className="produto-card">
+                <div className="imagem-container">
+                  <img
+                    src={produto.imagem[indiceAtual]}
+                    alt={produto.nome}
+                    className={`imagem-produto ${animandoImagem[produto.id] ? 'fade-out' : ''}`}
+                  />
+                  {produto.imagem.length > 1 && (
+                    <>
+                      <button 
+                        className="seta seta-esquerda" 
+                        onClick={() => trocarImagemComTransicao(produto.id, produto.imagem, 'anterior')}
+                      >
+                        <FaArrowAltCircleLeft />
+                      </button>
+                      <button 
+                        className="seta seta-direita" 
+                        onClick={() => trocarImagemComTransicao(produto.id, produto.imagem, 'proxima')}
+                      >
+                        <FaArrowAltCircleRight />
+                      </button>
+                    </>
+                  )}
+                </div>
+                <p className="preco">{produto.preco}</p>
+                <h3>{produto.nome}</h3>
+                <p className="descricaoProdutos">{produto.descricao}</p>
+                
+                <div className="produto-botoes">
+                  <button 
+                    onClick={() => handleClickWhatsapp(produto.mensagem)}
+                    className="botao-whatsapp"
+                  >
+                    Pedir pelo WhatsApp
+                  </button>
+                  <button 
+                    onClick={() => adicionarAoCarrinho(produto)}
+                    className="botao-carrinho"
+                  >
+                    🛒 Adicionar
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      <CartModal 
+        isOpen={carrinhoAberto} 
+        onClose={() => setCarrinhoAberto(false)}
+        itens={carrinhoItens}
+        setItens={setCarrinhoItens}
+      />
+    </section>
+  );
+}
+
+export default Produtos;
