@@ -1,146 +1,184 @@
 /* src/components/Carrinho/Carrinho.css */
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --modal-bg: #fff;             /* fundo do modal */
+  --border-color: #ccc;         /* bordas e separadores */
+  --text-primary: #6d6d6d;       /* cor principal dos textos */
+  --action-bg: #3C0E0E;          /* cor para botões de ação */
+  --action-bg-hover: #2a0b0b;     /* tom um pouco mais escuro para hover */
+  --transition-duration: 0.3s;
+  --modal-border-radius: 16px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .carrinho-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(3px);
-    animation: fadeIn 0.3s ease-out;
+  position: fixed;
+  inset: 0;
+  background: var(--bg-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn var(--transition-duration) ease-out;
+}
+
+.carrinho-modal {
+  background: var(--modal-bg);
+  border-radius: var(--modal-border-radius);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transform: translateY(20px);
+  animation: slideUp var(--transition-duration) ease-out forwards;
+  font-family: var(--font-family);
+}
+
+.carrinho-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: #f9f9f9;
+  font-family: var(--font-family);
+}
+
+.carrinho-cabecalho h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.carrinho-fechar {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: color var(--transition-duration);
+}
+
+.carrinho-fechar:hover {
+  color: var(--action-bg);
+}
+
+.carrinho-conteudo {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+  font-family: var(--font-family);
+}
+
+.carrinho-vazio {
+  text-align: center;
+  color: var(--text-primary);
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+.carrinho-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-family);
+}
+
+.item-info {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.item-titulo {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.item-detalhes {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.item-remover {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: color var(--transition-duration);
+}
+
+.item-remover:hover {
+  color: var(--action-bg);
+}
+
+.carrinho-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin-top: 1rem;
+  border-top: 2px solid var(--border-color);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-family: var(--font-family);
+}
+
+.carrinho-finalizar {
+  background: var(--action-bg);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background var(--transition-duration);
+  margin-top: 1rem;
+  font-family: var(--font-family);
+}
+
+.carrinho-finalizar:hover {
+  background: var(--action-bg-hover);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
   .carrinho-modal {
-    background: white;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .carrinho-cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    border-bottom: 1px solid #eee;
+    width: 95%;
+    padding: 1rem;
   }
   
   .carrinho-cabecalho h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1.3rem;
   }
-  
-  .carrinho-fechar {
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    color: #666;
-    transition: color 0.3s;
-  }
-  
-  .carrinho-fechar:hover {
-    color: #333;
-  }
-  
-  .carrinho-conteudo {
-    padding: 1.5rem;
-    overflow-y: auto;
-  }
-  
-  .carrinho-vazio {
-    text-align: center;
-    color: #666;
-    margin: 2rem 0;
-  }
-  
-  .carrinho-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .item-info {
-    flex: 1;
-    margin-right: 1rem;
-  }
-  
-  .item-titulo {
-    margin: 0;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .item-detalhes {
-    margin: 0.25rem 0 0;
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
-  .item-remover {
-    background: none;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color 0.3s;
-  }
-  
-  .item-remover:hover {
-    color: #ff4444;
-  }
-  
-  .carrinho-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 0;
-    margin-top: 1rem;
-    border-top: 2px solid #eee;
-    font-size: 1.1rem;
-  }
-  
-  .carrinho-finalizar {
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 1rem;
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: filter 0.3s;
-    margin-top: 1rem;
-  }
-  
-  .carrinho-finalizar:hover {
-    filter: brightness(0.9);
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @media (max-width: 480px) {
-    .carrinho-modal {
-      width: 95%;
-      padding: 1rem;
-    }
-    
-    .carrinho-cabecalho h2 {
-      font-size: 1.3rem;
-    }
-  }
+}

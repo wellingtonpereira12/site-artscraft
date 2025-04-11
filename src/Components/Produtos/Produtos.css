@@ -39,6 +39,35 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.produto-botoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.botao-carrinho svg {
+  transition: transform 0.2s ease;
+}
+
+.botao-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  min-width: 44px;
+}
+
+.botao-carrinho:hover svg {
+  transform: scale(1.1);
+}
+
+.botao-whatsapp {
+  flex: 1;
+  text-align: center;
+}
+
 .produtos-container h1 {
     text-align: left; /* Alinhar o texto à esquerda */
     color: #3C0E0E; /* Exemplo de cor */

@@ -1,5 +1,6 @@
 import './Produtos.css';
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"; 
+import { ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
 import CartModal from '../Carrinho/Carrinho'; // Certifique-se de ter este componente
 
@@ -258,13 +259,13 @@ function Produtos({ carrinhoItens, setCarrinhoItens }) {
                     onClick={() => handleClickWhatsapp(produto.mensagem)}
                     className="botao-whatsapp"
                   >
-                    Pedir pelo WhatsApp
+                    Peça o seu
                   </button>
                   <button 
                     onClick={() => adicionarAoCarrinho(produto)}
                     className="botao-carrinho"
                   >
-                    🛒 Adicionar
+                    <ShoppingCart color="#ffffff" size={20} />
                   </button>
                 </div>
               </div>
