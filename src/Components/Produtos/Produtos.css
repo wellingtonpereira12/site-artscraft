@@ -208,11 +208,6 @@
     right: 10px;
   }
   
-  .seta:hover {
-    color: #5a1a1a; /* muda a cor no hover se quiser */
-  }
-  
-
   .imagem-produto {
     width: 100%;
     border-radius: 15px;
