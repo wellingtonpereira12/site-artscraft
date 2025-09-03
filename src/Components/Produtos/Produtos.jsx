@@ -21,7 +21,10 @@ import KitDifusorRechaudPastilhasAromatizantes from './Fotos/KitDifusorRechaudPa
 import VelaRosa from './Fotos/VelaRosa.jpeg';
 import MinibuqueRosa from './Fotos/MinibuqueRosa.jpeg';
 import MinibuqueFlor from './Fotos/MinibuqueFlor.jpeg';
- 
+import CaixaJardim1 from './Fotos/CaixaJardim1.jpg';
+import CaixaJardim2 from './Fotos/CaixaJardim2.jpg';
+import CaixaJardim3 from './Fotos/CaixaJardim3.jpg';
+import CaixaJardim4 from './Fotos/CaixaJardim4.jpg';
 const produtosLista = [
   {
     id: 1,
@@ -139,6 +142,15 @@ const produtosLista = [
     imagem: [MinibuqueFlor],
     categoria: 'Velas',
     mensagem: 'Olá, visitei o site e fiquei interessado no Mini buquê Flor. Poderia me informar como proceder para comprá-lo?'
+  },
+  {
+    id: 14,
+    nome: 'Caixa Rustica Para Jardim',
+    preco: 'R$ 99,90',
+    descricao: 'Caixa rústica em madeira, ideal para jardins, hortas e decoração, unindo praticidade e charme natural',
+    imagem: [CaixaJardim1, CaixaJardim2, CaixaJardim3, CaixaJardim4],
+    categoria: 'Marcenaria',
+    mensagem: 'Olá, visitei o site e fiquei interessado na Caixa Rustica Para Jardim. Poderia me informar como proceder para comprá-lo?'
   }
 ];
 
