@@ -92,7 +92,7 @@ function Produtos({ carrinhoItens, setCarrinhoItens }) {
             const indiceAtual = indicesImagem[produto.id] || 0;
             return (
               <div key={produto.id} className="produto-card" onClick={() => navigate(`/produto/${produto.id}`)} style={{ cursor: 'pointer' }}>
-                <div className="imagem-container" onClick={(e) => e.stopPropagation()}>
+                <div className="imagem-container">
                   <img
                     src={produto.imagem[indiceAtual]}
                     alt={produto.nome}
