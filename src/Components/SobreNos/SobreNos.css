@@ -1,0 +1,74 @@
+/* Estilo geral da seção Sobre Nós */
+.sobre-nos-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 2rem; /* Remove padding lateral fixo, usa padding geral */
+}
+
+/* Conteúdo principal */
+.sobre-nos-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 2rem; /* Reduz o padding interno */
+}
+
+.texto-principal {
+    display: flex;
+    flex-direction: column; /* Empilha os elementos em telas menores */
+    align-items: flex-start; /* Alinha à esquerda em telas menores */
+}
+
+/* Título principal */
+.texto-principal h1 {
+    font-size: 1.5rem;
+    color: #3c0e0e;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.texto-principal h2 {
+    font-size: 2.5rem; /* Reduz o tamanho da fonte para telas menores */
+    color: #3c0e0e;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem; /* Adiciona margem inferior */
+}
+
+/* Texto descritivo */
+.descricaoSobre p {
+    color: #3c0e0e;
+    font-size: 1rem; /* Reduz o tamanho da fonte para telas menores */
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.descricaoSobre p strong {
+    color: #3c0e0e;
+    font-weight: bold;
+}
+
+.EntreEmContato {
+    max-width: 80%; /* A imagem ocupa no máximo 80% da largura do container */
+    display: flex;
+    margin: 0 auto; /* Centraliza horizontalmente o container */
+}
+
+@media (min-width: 768px) { /* Ajusta o breakpoint conforme necessário */
+    .texto-principal {
+        flex-direction: row; /* Volta a ser linha em telas maiores */
+        align-items: center; /* Alinha verticalmente em telas maiores */
+    }
+    .texto-principal h2 {
+        font-size: 3.8rem; /* Restaura o tamanho original da fonte */
+        padding-right: 10rem;
+        margin-bottom: 0;
+    }
+    .descricaoSobre p {
+        font-size: 1.3rem; /* Restaura o tamanho original da fonte */
+    }
+    .sobre-nos-content {
+        padding: 10rem;
+    }
+}
+

@@ -1,0 +1,101 @@
+/* Estilos gerais */
+.vela-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 4rem; /* Aumentei o padding para dar mais espaço */
+    background-color: #f8f0e3; /* Cor de fundo bege claro */
+}
+
+.vela-content {
+    display: flex;
+    flex-wrap: wrap; /* Mantém a responsividade */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 4rem; /* Espaçamento maior entre texto e imagem */
+    max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo na tela */
+}
+
+/* Estilos do texto */
+.vela-text-container{ /* Estilos para o container do texto */
+    max-width: 50%; /* O texto ocupa até 50% da largura do container pai */
+}
+
+.vela-preco {
+    background-color: #fee6e6;
+    color: #3c0e0e;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.vela-titulo { /* Estilos para o título */
+    font-size: 4rem; /* Aumentei o tamanho da fonte */
+    color: #3c0e0e;
+    margin-bottom: 1rem;
+}
+
+.vela-subtitulo { /* Estilos para o subtítulo */
+    font-size: 2rem;
+    color: #3c0e0e;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.vela-descricao {
+    font-size: 1.1rem;
+    color: #3c0e0e;
+    line-height: 1.6; /* Melhora a legibilidade */
+    margin-bottom: 2rem;
+}
+
+.vela-link-contato {
+    color: #3c0e0e;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+/* Estilos da imagem */
+.vela-imagem-vela img {
+    max-width: 400px; /* Largura máxima da imagem */
+    height: auto;
+    display: block;
+}
+
+.imagem-banner {
+    max-width: 80%;
+    display: block; /* Define como bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0;
+}
+
+.imagem-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .vela-content {
+        flex-direction: column; /* Empilha texto e imagem verticalmente */
+        align-items: center;
+        text-align: center; /* Centraliza o texto */
+    }
+    .vela-text-container{
+        max-width: 90%;
+    }
+    .vela-titulo {
+        font-size: 3rem;
+    }
+    .vela-subtitulo {
+        font-size: 1.5rem;
+    }
+    .vela-imagem-vela img {
+        max-width: 90%;
+    }
+}

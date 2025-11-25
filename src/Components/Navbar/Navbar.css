@@ -1,0 +1,290 @@
+*,*::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 80.5%;
+}
+
+body{
+    font-size: 1.78rem;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #3C0E0E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Define o peso como normal */
+}
+
+a.scrolled{
+    text-decoration: none;
+    color: #3C0E0E;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Define o peso como normal */
+}
+
+.FaWhatsapp {
+    width: 25px;
+    height: auto;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 8vh;
+    background: rgba(0, 0, 73, 0);
+    flex-direction: row; /* Alinha itens horizontalmente */
+    padding: 90px 300px; /* Ajuste o padding conforme necessário */
+    position: fixed; /* Fixa o menu no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0); /* Adiciona fundo semi-transparente */
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.nav.scrolled {
+    background-color: rgb(255, 255, 255); /* Escurece o fundo ao rolar */
+    padding: 35px 20vw; /* Ajuste o padding conforme necessário */
+    
+}
+
+.nav_brand{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 200.5%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal; /* Garante que a fonte não será em negrito */
+}
+.nav_brand.scrolled{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 150.5%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal; /* Garante que a fonte não será em negrito */
+}
+.nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    transition: 0.4s ease-in;    
+    font-family: 'Poppins', sans-serif;
+}
+.nav_toggler div{
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: darkgray;
+}
+.nav_toggler{
+    cursor: pointer;
+    display: none;
+}
+
+.containerlogo {
+    display: flex;
+    justify-content: space-between; /* ou 'center', 'flex-start', 'flex-end' */
+    align-items: center; /* Alinha os itens verticalmente */
+}    
+
+.logo {
+    width: 10vw; /* Defina a largura */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.logo.scrolled {
+    width: 3.7vw; /* Defina a largura */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.ContainerNome {
+    display: flex;
+    flex-direction: column; /* Coloca os links um abaixo do outro */
+    line-height: 0.8;
+}
+
+.ContainerNome.scrolled {
+    display: flex;
+    flex-direction: column; /* Coloca os links um abaixo do outro */
+    line-height: 0.4;
+}
+  
+.ContainerNome a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: rgb(255, 255, 255); /* Define a cor dos links */
+    margin-bottom: 10px; /* Espaçamento entre os links */
+}
+
+.ContainerNome a.scrolled {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: rgb(78, 78, 78); /* Define a cor dos links */
+    margin-bottom: 0.5vw; /* Espaçamento entre os links */
+}
+
+
+.nomeEmpresa{
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.DescrEmpresa{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.nomeEmpresa.scrolled{
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.DescrEmpresa.scrolled{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.btnNav {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 0.5rem;
+    border: none; 
+    outline: none; 
+    border-radius: 1vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
+    padding: 0.5vw;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer; 
+}
+
+.btnNav:active {
+    background-color: black; 
+    color: white;
+    transform: scale(1);
+}
+
+.btnNav.scrolled {
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 1700px){
+    .nav_toggler {
+        display: block;
+    }
+    .nav_menu{
+        position: fixed;
+        top: 7vh;
+        right: 0;
+        width: 40%;
+        height: 93vh;
+        background: rgb(255, 255, 255);
+        flex-direction: column;
+        transition: 0.5s ease-in;
+        transform: translateX(100%);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding-top: 5vh;
+        font-size: 2.5vh;
+    }
+    .nav {
+        background-color: rgb(255, 255, 255);
+        padding: 30px 0px; 
+    }
+    .nav.scrolled {
+        background-color: rgb(255, 255, 255); 
+        padding: 30px 0px; 
+    }
+    .logo {
+        width: 60px; /* Defina a largura */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+    .logo.scrolled {
+        width: 60px; /* Defina a largura */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+    .ContainerNome {
+        display: flex;
+        flex-direction: column; /* Coloca os links um abaixo do outro */
+        line-height: 0.4;
+    }
+    .ContainerNome a {
+        text-decoration: none; /* Remove sublinhado dos links */
+        color: rgb(78, 78, 78); /* Define a cor dos links */
+        margin-bottom: 10px; /* Espaçamento entre os links */
+    }
+
+    .ContainerNome a.scrolled {
+        margin-bottom: 10px; /* Espaçamento entre os links */
+    }
+
+    .nomeEmpresa{
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        margin: 10px;
+    }
+    .nomeEmpresa.scrolled{
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        margin: 10px;
+    }
+    .DescrEmpresa{
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        margin: 10px;
+    }
+    .DescrEmpresa.scrolled{
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        margin: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(68, 68, 68);
+    }   
+    .btnNav {
+        background-color: black; 
+        color: white;
+        padding: 1vw;
+    }
+    
+    .btnNav:active {
+        background-color: white; 
+        color: black;
+    }
+}
+@media screen and (max-width: 386px){
+.DescrEmpresa{
+    font-size: 4vw;
+}
+.DescrEmpresa.scrolled{
+    font-size: 4vw;
+}
+}
+
+.nav_active{
+    transform: translateX(0);  
+}
+
+.NavIconBarraLateral{
+    width: 40px; /* ou qualquer valor desejado */
+    height: auto; /* mantém a proporção */   
+    color: rgb(68, 68, 68);
+}

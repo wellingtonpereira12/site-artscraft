@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+#inicio {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh;
+    padding: 2rem;
+    padding-left: 15%;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    font-family: 'Poppins', sans-serif;
+    width: 30%; /* Largura para o container de texto */
+    padding: 5rem;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.hero-container h1 {
+    color: #3C0E0E;
+    margin: 0 0 1rem 0;
+    font-size: 24px;
+}
+
+.hero-container h2 {
+    color: #3C0E0E;
+    margin: 0 0 1rem 0;
+    font-size: 80px;
+    line-height: 1;
+}
+
+.hero-container h3 {
+    color: #3C0E0E;
+    margin: 0 0 1rem 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.hero-image-container {
+    background-image: url('../../assets/heroimagecontainer.png');
+    background-size: contain; /* Ajusta a imagem para caber no container */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60%; /* Largura para o container da imagem */
+    height: 80vh; /* Altura com base na altura da tela */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1115px) {
+    #inicio {
+        flex-direction: column; /* Empilha em telas menores */
+        align-items: flex-start; /* Alinha ao topo em telas menores */
+        padding-top: 5rem;
+        padding-left: 0%;
+    }
+
+    .hero-container {
+        width: 90%; /* Largura total em telas menores */
+        text-align: center; /* Centraliza o texto em telas menores */
+        z-index: 1;
+    }
+
+    .hero-container h1 {
+        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
+        color: rgb(255, 255, 255);
+    }
+    
+    .hero-container h2 {
+        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
+        color: rgb(255, 255, 255);
+    }
+    
+    .hero-container h3 {
+        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
+        color: rgb(255, 255, 255);
+    }
+    
+
+    .hero-image-container {
+        background-image: url('../../assets/heroimagecontainer.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Faz a imagem ficar atrás do conteúdo */
+    }
+    
+    .hero-container h2 {
+        font-size: 3rem; /* Ajusta o tamanho da fonte do h2 em telas menores */
+    }
+
+    .hero-container {
+        width: 100%; /* Largura para o container de texto */
+    }
+}
