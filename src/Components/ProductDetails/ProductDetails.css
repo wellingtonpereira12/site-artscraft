@@ -10,7 +10,7 @@
 
 .botao-voltar-container {
   margin-bottom: 2rem;
-  z-index: 1000;
+  z-index: 5;
   position: relative;
 }
 
@@ -238,6 +238,150 @@
   color: #3C0E0E;
 }
 
+/* Produtos Relacionados */
+.produtos-relacionados-section {
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+}
+
+.produtos-relacionados-titulo {
+  font-size: 2rem;
+  color: #3C0E0E;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.produtos-relacionados-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.produto-relacionado-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.produto-relacionado-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.produto-relacionado-imagem-container {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.produto-relacionado-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.produto-relacionado-card:hover .produto-relacionado-imagem {
+  transform: scale(1.05);
+}
+
+.produto-relacionado-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.produto-relacionado-preco {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3C0E0E;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.produto-relacionado-nome {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin: 0;
+  line-height: 1.3;
+  font-family: 'Poppins', sans-serif;
+}
+
+.produto-relacionado-descricao {
+  font-size: 0.9rem;
+  color: #6e4d4d;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.produto-relacionado-botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.produto-relacionado-botao-carrinho {
+  background: #3C0E0E;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.produto-relacionado-botao-carrinho:hover {
+  background: #5a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(60, 14, 14, 0.3);
+}
+
+.produto-relacionado-botao-whatsapp {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.produto-relacionado-botao-whatsapp:hover {
+  background: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
 /* Responsividade */
 @media (max-width: 968px) {
   .product-details-page {
@@ -254,6 +398,15 @@
   }
 
   .preco-detalhes {
+    font-size: 1.75rem;
+  }
+
+  .produtos-relacionados-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .produtos-relacionados-titulo {
     font-size: 1.75rem;
   }
 }
@@ -290,5 +443,36 @@
   .miniatura {
     width: 60px;
     height: 60px;
+  }
+
+  .produtos-relacionados-section {
+    margin-top: 3rem;
+    padding: 0 1rem;
+  }
+
+  .produtos-relacionados-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .produtos-relacionados-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .produto-relacionado-info {
+    padding: 1.25rem;
+  }
+
+  .produto-relacionado-preco {
+    font-size: 1.25rem;
+  }
+
+  .produto-relacionado-nome {
+    font-size: 1rem;
+  }
+
+  .produto-relacionado-descricao {
+    font-size: 0.85rem;
   }
 }

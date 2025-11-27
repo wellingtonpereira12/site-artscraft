@@ -50,7 +50,7 @@ const Navbar = ({ carrinhoItens, setCarrinhoItens }) => {
 
     const navToggle = () => {
         setActive(prev => prev === "nav_menu" ? "nav_menu nav_active" : "nav_menu");
-        setToggleIcon(prev => prev === 'nav_toggler' ? 'nav_toggler toggler' : 'nav_toggler');
+        setToggleIcon(prev => prev === 'nav_toggler' ? 'nav_toggler toggle_hidden' : 'nav_toggler');
     };
 
     useEffect(() => {
@@ -66,10 +66,13 @@ const Navbar = ({ carrinhoItens, setCarrinhoItens }) => {
     return (
         <div className="navbar">
             <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
-                <div className='containerlogo'>
+                <div className='containerlogo' onClick={() => handleNavClick('inicio')} style={{ cursor: 'pointer' }}>
                     <img src={logo} alt="Logo Arts e Crafts" className={`logo ${scrolled ? 'scrolled' : ''}`} />
                 </div>
                 <ul className={active}>
+                    <div className="sidebar-close" onClick={navToggle}>
+                        <SquareX className='NavIconBarraLateral' />
+                    </div>
                     <li><a className={`a ${scrolled ? 'scrolled' : ''}`} onClick={() => handleNavClick('inicio')} style={{ cursor: 'pointer' }}>Início</a></li>
                     <li><a className={`a ${scrolled ? 'scrolled' : ''}`} onClick={() => handleNavClick('Produtos')} style={{ cursor: 'pointer' }}>Produtos</a></li>
                     <li><a className={`a ${scrolled ? 'scrolled' : ''}`} onClick={() => handleNavClick('sobre-nos')} style={{ cursor: 'pointer' }}>Sobre</a></li>
@@ -99,11 +102,7 @@ const Navbar = ({ carrinhoItens, setCarrinhoItens }) => {
                 </ul>
 
                 <div onClick={navToggle} className={toggleIcon}>
-                    {toggleIcon === 'nav_toggler' ? (
-                        <Menu className='NavIconBarraLateral' />
-                    ) : (
-                        <SquareX className='NavIconBarraLateral' />
-                    )}
+                    <Menu className='NavIconBarraLateral' />
                 </div>
             </nav>
 

@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight, FaArrowLeft } from "react-icons/fa";
 import { ShoppingCart } from 'lucide-react';
 import { produtosLista } from '../../data/produtosData';
@@ -13,6 +13,20 @@ function ProductDetails({ carrinhoItens, setCarrinhoItens }) {
     const [indiceImagem, setIndiceImagem] = useState(0);
     const [animandoImagem, setAnimandoImagem] = useState(false);
     const phoneNumber = '47991263519';
+
+    // Scroll para o topo quando o produto mudar
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [id]);
+
+    // Selecionar 3 produtos aleatórios (excluindo o produto atual)
+    const produtosRelacionados = useMemo(() => {
+        if (!produto) return [];
+
+        const outrosProdutos = produtosLista.filter(p => p.id !== produto.id);
+        const embaralhados = [...outrosProdutos].sort(() => Math.random() - 0.5);
+        return embaralhados.slice(0, 3);
+    }, [produto]);
 
     if (!produto) {
         return (
@@ -40,16 +54,16 @@ function ProductDetails({ carrinhoItens, setCarrinhoItens }) {
         }, 250);
     };
 
-    const adicionarAoCarrinho = () => {
+    const adicionarAoCarrinho = (produtoParaAdicionar = produto) => {
         setCarrinhoItens(prev => {
-            const itemExistente = prev.find(item => item.id === produto.id);
+            const itemExistente = prev.find(item => item.id === produtoParaAdicionar.id);
             return itemExistente
                 ? prev.map(item =>
-                    item.id === produto.id
+                    item.id === produtoParaAdicionar.id
                         ? { ...item, quantidade: item.quantidade + 1 }
                         : item
                 )
-                : [...prev, { ...produto, quantidade: 1 }];
+                : [...prev, { ...produtoParaAdicionar, quantidade: 1 }];
         });
         alert('Produto adicionado ao carrinho!');
     };
@@ -130,6 +144,56 @@ function ProductDetails({ carrinhoItens, setCarrinhoItens }) {
                     </div>
                 </div>
             </div>
+
+            {/* Seção de Produtos Relacionados */}
+            {produtosRelacionados.length > 0 && (
+                <div className="produtos-relacionados-section">
+                    <h2 className="produtos-relacionados-titulo">Produtos Relacionados</h2>
+                    <div className="produtos-relacionados-grid">
+                        {produtosRelacionados.map(produtoRel => (
+                            <div
+                                key={produtoRel.id}
+                                className="produto-relacionado-card"
+                                onClick={() => navigate(`/produto/${produtoRel.id}`)}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <div className="produto-relacionado-imagem-container">
+                                    <img
+                                        src={produtoRel.imagem[0]}
+                                        alt={produtoRel.nome}
+                                        className="produto-relacionado-imagem"
+                                    />
+                                </div>
+                                <div className="produto-relacionado-info">
+                                    <p className="produto-relacionado-preco">{produtoRel.preco}</p>
+                                    <h3 className="produto-relacionado-nome">{produtoRel.nome}</h3>
+                                    <p className="produto-relacionado-descricao">
+                                        {produtoRel.descricao.length > 80
+                                            ? `${produtoRel.descricao.substring(0, 80)}...`
+                                            : produtoRel.descricao}
+                                    </p>
+
+                                    <div className="produto-relacionado-botoes" onClick={(e) => e.stopPropagation()}>
+                                        <button
+                                            onClick={() => adicionarAoCarrinho(produtoRel)}
+                                            className="produto-relacionado-botao-carrinho"
+                                        >
+                                            <ShoppingCart size={18} />
+                                            <span>Adicionar ao Carrinho</span>
+                                        </button>
+                                        <button
+                                            onClick={() => window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(produtoRel.mensagem)}`, '_blank')}
+                                            className="produto-relacionado-botao-whatsapp"
+                                        >
+                                            Peça pelo WhatsApp
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
