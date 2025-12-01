@@ -1,15 +1,21 @@
 /* src/components/Carrinho/Carrinho.css */
 :root {
   --font-family: 'Poppins', sans-serif;
-  --bg-overlay: rgba(0, 0, 0, 0.5);
-  --modal-bg: #fff;             /* fundo do modal */
-  --border-color: #ccc;         /* bordas e separadores */
-  --text-primary: #6d6d6d;       /* cor principal dos textos */
-  --action-bg: #3C0E0E;          /* cor para botões de ação */
-  --action-bg-hover: #2a0b0b;     /* tom um pouco mais escuro para hover */
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --modal-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-light: #9ca3af;
+  --action-bg: #3C0E0E;
+  --action-bg-hover: #2a0b0b;
+  --accent-color: #8b5cf6;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
   --transition-duration: 0.3s;
-  --modal-border-radius: 16px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --modal-border-radius: 20px;
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .carrinho-overlay {
@@ -17,25 +23,25 @@
   inset: 0;
   background: var(--bg-overlay);
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
   animation: fadeIn var(--transition-duration) ease-out;
 }
 
 .carrinho-modal {
   background: var(--modal-bg);
-  border-radius: var(--modal-border-radius);
+  border-radius: var(--modal-border-radius) 0 0 var(--modal-border-radius);
   width: 90%;
-  max-width: 500px;
-  max-height: 90vh;
+  max-width: 480px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
-  transform: translateY(20px);
-  animation: slideUp var(--transition-duration) ease-out forwards;
+  transform: translateX(100%);
+  animation: slideInRight var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
   font-family: var(--font-family);
 }
 
@@ -45,14 +51,41 @@
   align-items: center;
   padding: 1.5rem;
   border-bottom: 1px solid var(--border-color);
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
   font-family: var(--font-family);
+}
+
+.cabecalho-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.carrinho-icone {
+  color: var(--action-bg);
 }
 
 .carrinho-cabecalho h2 {
   margin: 0;
   font-size: 1.5rem;
+  font-weight: 600;
   color: var(--text-primary);
+}
+
+.carrinho-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: linear-gradient(135deg, var(--action-bg) 0%, var(--action-bg-hover) 100%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  min-width: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(60, 14, 14, 0.3);
 }
 
 .carrinho-fechar {
@@ -60,12 +93,18 @@
   border: none;
   padding: 0.5rem;
   cursor: pointer;
-  color: var(--text-primary);
-  transition: color var(--transition-duration);
+  color: var(--text-secondary);
+  transition: all var(--transition-duration);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carrinho-fechar:hover {
   color: var(--action-bg);
+  background: rgba(60, 14, 14, 0.1);
+  transform: rotate(90deg);
 }
 
 .carrinho-conteudo {
@@ -73,112 +112,338 @@
   overflow-y: auto;
   flex: 1;
   font-family: var(--font-family);
+  background: #fafafa;
 }
 
 .carrinho-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: var(--text-secondary);
+  margin: 4rem 0;
+  gap: 1rem;
+}
+
+.icone-vazio {
+  color: var(--text-light);
+  opacity: 0.5;
+}
+
+.carrinho-vazio p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
   color: var(--text-primary);
-  margin: 2rem 0;
-  font-size: 1rem;
+}
+
+.texto-secundario {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.carrinho-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .carrinho-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-color);
-  font-family: var(--font-family);
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-duration);
+  animation: slideInItem 0.3s ease-out backwards;
 }
 
-.item-info {
+.carrinho-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.item-imagem {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-duration);
+}
+
+.carrinho-item:hover .item-imagem img {
+  transform: scale(1.1);
+}
+
+.item-detalhes {
   flex: 1;
-  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .item-titulo {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   color: var(--text-primary);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.item-detalhes {
-  margin: 0.25rem 0 0;
+.item-preco {
+  margin: 0;
   font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--action-bg);
+}
+
+.item-quantidade {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.quantidade-btn {
+  background: var(--action-bg);
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-duration);
+  box-shadow: 0 2px 4px rgba(60, 14, 14, 0.2);
+}
+
+.quantidade-btn:hover {
+  background: var(--action-bg-hover);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(60, 14, 14, 0.3);
+}
+
+.quantidade-btn:active {
+  transform: scale(0.95);
+}
+
+.quantidade-valor {
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--text-primary);
+  min-width: 24px;
+  text-align: center;
+}
+
+.item-acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.item-subtotal {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
 }
 
 .item-remover {
   background: transparent;
   border: none;
   padding: 0.5rem;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   cursor: pointer;
-  transition: color var(--transition-duration);
+  transition: all var(--transition-duration);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-remover:hover {
-  color: var(--action-bg);
+  color: var(--danger-color);
+  background: rgba(239, 68, 68, 0.1);
+  transform: scale(1.1);
 }
 
-.carrinho-total {
+.carrinho-resumo {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resumo-linha {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
-  margin-top: 1rem;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.resumo-linha.total {
   border-top: 2px solid var(--border-color);
-  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-size: 1.25rem;
   color: var(--text-primary);
-  font-family: var(--font-family);
+}
+
+.resumo-linha.total strong {
+  color: var(--action-bg);
+  font-size: 1.5rem;
 }
 
 .carrinho-finalizar {
-  background: var(--action-bg);
+  background: linear-gradient(135deg, var(--action-bg) 0%, var(--action-bg-hover) 100%);
   color: #fff;
   border: none;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
-  transition: background var(--transition-duration);
-  margin-top: 1rem;
+  font-weight: 600;
+  transition: all var(--transition-duration);
   font-family: var(--font-family);
+  box-shadow: 0 4px 12px rgba(60, 14, 14, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.carrinho-finalizar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.carrinho-finalizar:hover::before {
+  left: 100%;
 }
 
 .carrinho-finalizar:hover {
-  background: var(--action-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(60, 14, 14, 0.4);
+}
+
+.carrinho-finalizar:active {
+  transform: translateY(0);
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-@keyframes slideUp {
+@keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(100%);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
+}
+
+@keyframes slideInItem {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scrollbar personalizada */
+.carrinho-conteudo::-webkit-scrollbar {
+  width: 8px;
+}
+
+.carrinho-conteudo::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.carrinho-conteudo::-webkit-scrollbar-thumb {
+  background: var(--action-bg);
+  border-radius: 10px;
+}
+
+.carrinho-conteudo::-webkit-scrollbar-thumb:hover {
+  background: var(--action-bg-hover);
 }
 
 @media (max-width: 480px) {
   .carrinho-modal {
-    width: 95%;
-    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
   }
-  
+
   .carrinho-cabecalho h2 {
+    font-size: 1.25rem;
+  }
+
+  .item-imagem {
+    width: 70px;
+    height: 70px;
+  }
+
+  .item-titulo {
+    font-size: 0.9rem;
+  }
+
+  .resumo-linha.total {
+    font-size: 1.1rem;
+  }
+
+  .resumo-linha.total strong {
     font-size: 1.3rem;
   }
 }
