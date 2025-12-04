@@ -1,99 +1,435 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   MAIN SECTION STYLES
+   ======================================== */
 
 #inicio {
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
+    align-items: center;
     min-height: 100vh;
     padding: 2rem;
     padding-left: 15%;
     box-sizing: border-box;
+    background: linear-gradient(135deg, #F7F2E8 0%, #FFF5E6 50%, #F7E8D8 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Decorative gradient overlay */
+#inicio::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(60, 14, 14, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ========================================
+   HERO CONTAINER - GLASSMORPHISM
+   ======================================== */
 
 .hero-container {
     font-family: 'Poppins', sans-serif;
-    width: 30%; /* Largura para o container de texto */
-    padding: 5rem;
-    text-align: left; /* Alinha o texto à esquerda */
+    width: 30%;
+    padding: 3rem;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 8px 32px 0 rgba(60, 14, 14, 0.1),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+
+    transition: all 0.3s ease;
 }
 
-.hero-container h1 {
-    color: #3C0E0E;
-    margin: 0 0 1rem 0;
-    font-size: 24px;
+.hero-container:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 40px 0 rgba(60, 14, 14, 0.15),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
 }
 
-.hero-container h2 {
-    color: #3C0E0E;
+.hero-content-animated {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.hero-subtitle {
+    color: #8B4513;
     margin: 0 0 1rem 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-title {
+    margin: 0 0 1.5rem 0;
     font-size: 80px;
     line-height: 1;
+    font-weight: 700;
+
+    /* Animated gradient text */
+    background: linear-gradient(135deg,
+            #3C0E0E 0%,
+            #6B2020 25%,
+            #8B4513 50%,
+            #6B2020 75%,
+            #3C0E0E 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation:
+        fadeInUp 1s ease-out 0.4s both,
+        gradientShift 8s ease infinite;
+
+    position: relative;
 }
 
-.hero-container h3 {
+/* Shimmer effect on hover */
+.hero-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 3s infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-title:hover::before {
+    opacity: 1;
+}
+
+.hero-description {
     color: #3C0E0E;
-    margin: 0 0 1rem 0;
+    margin: 0 0 2rem 0;
     font-size: 16px;
     font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.85;
+    animation: fadeInUp 1s ease-out 0.6s both;
+    transition: all 0.3s ease;
 }
+
+.hero-description:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* ========================================
+   CTA BUTTON
+   ======================================== */
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #3C0E0E 0%, #6B2020 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(60, 14, 14, 0.3);
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.8s both;
+    z-index: 1;
+}
+
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta:hover::before {
+    left: 100%;
+}
+
+.hero-cta:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 25px rgba(60, 14, 14, 0.4);
+}
+
+.hero-cta:active {
+    transform: translateY(0) scale(1);
+}
+
+.cta-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 20px;
+}
+
+.hero-cta:hover .cta-arrow {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   HERO IMAGE
+   ======================================== */
 
 .hero-image-container {
     background-image: url('../../assets/heroimagecontainer.png');
-    background-size: contain; /* Ajusta a imagem para caber no container */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 60%; /* Largura para o container da imagem */
-    height: 80vh; /* Altura com base na altura da tela */
+    width: 60%;
+    height: 80vh;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 30px rgba(60, 14, 14, 0.2));
 }
 
-/* Media Queries para responsividade */
+/* Gradient overlay on image */
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(247, 242, 232, 0.1) 0%,
+            transparent 50%);
+    pointer-events: none;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+   ======================================== */
+
 @media (max-width: 1115px) {
     #inicio {
-        flex-direction: column; /* Empilha em telas menores */
-        align-items: flex-start; /* Alinha ao topo em telas menores */
-        padding-top: 5rem;
-        padding-left: 0%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        padding-top: 6rem;
+        /* Keep same light gradient as desktop */
+        background: linear-gradient(135deg, #F7F2E8 0%, #FFF5E6 50%, #F7E8D8 100%);
+        background-size: 200% 200%;
+        animation: gradientShift 15s ease infinite;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    #inicio::before {
+        /* Keep decorative overlay */
+        top: -30%;
+        right: -30%;
     }
 
     .hero-container {
-        width: 90%; /* Largura total em telas menores */
-        text-align: center; /* Centraliza o texto em telas menores */
-        z-index: 1;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        z-index: 2;
+        padding: 2rem 1.5rem;
+
+        /* Same glassmorphism as desktop */
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        position: relative;
     }
 
-    .hero-container h1 {
-        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
-        color: rgb(255, 255, 255);
+    .hero-container:hover {
+        transform: translateY(-3px);
     }
-    
-    .hero-container h2 {
-        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
-        color: rgb(255, 255, 255);
+
+    .hero-subtitle {
+        /* Keep same brown color as desktop */
+        color: #8B4513;
+        text-shadow: none;
+        font-size: 18px;
     }
-    
-    .hero-container h3 {
-        text-shadow: 3px 3px 5px rgb(0, 0, 0);  /* Sombra branca */
-        color: rgb(255, 255, 255);
+
+    .hero-title {
+        /* Keep same gradient as desktop */
+        background: linear-gradient(135deg,
+                #3C0E0E 0%,
+                #6B2020 25%,
+                #8B4513 50%,
+                #6B2020 75%,
+                #3C0E0E 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 3rem;
+        text-shadow: none;
     }
-    
+
+    .hero-description {
+        /* Keep same dark text as desktop */
+        color: #3C0E0E;
+        text-shadow: none;
+        opacity: 0.85;
+    }
+
+    .hero-description:hover {
+        transform: none;
+        opacity: 1;
+    }
 
     .hero-image-container {
         background-image: url('../../assets/heroimagecontainer.png');
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         position: absolute;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* Faz a imagem ficar atrás do conteúdo */
-    }
-    
-    .hero-container h2 {
-        font-size: 3rem; /* Ajusta o tamanho da fonte do h2 em telas menores */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        max-width: 450px;
+        height: 60vh;
+        min-height: 350px;
+        z-index: 1;
+        opacity: 0.3;
+        filter: drop-shadow(0 5px 15px rgba(60, 14, 14, 0.1));
+        animation: none;
+        pointer-events: none;
+        /* Prevents image from blocking button clicks */
     }
 
-    .hero-container {
-        width: 100%; /* Largura para o container de texto */
+    .hero-image-container::after {
+        display: none;
     }
+
+    .hero-cta {
+        /* Keep same style as desktop */
+        background: linear-gradient(135deg, #3C0E0E 0%, #6B2020 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(60, 14, 14, 0.3);
+    }
+
+    .hero-cta:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(60, 14, 14, 0.4);
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY & PERFORMANCE
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Improve text rendering */
+.hero-container {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
